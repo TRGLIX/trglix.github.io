@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url("FONDO.jpg");
+    <img src="ad.png" width="110">
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,7 +11,7 @@ body {
 }
 
 .centered-container {
-    background-color: white;
+    background-color: rgb(0, 119, 255);
     padding: 20px;
     border: px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
