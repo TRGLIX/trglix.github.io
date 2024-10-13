@@ -10,7 +10,19 @@
     <!-- Formulario de inicio de sesión -->
     <div id="login-container" class="centered-container">
         <img src="ad.png" width="250">
-        <h2>Iniciar Sesión</h2>
+        <h2>Iniciar Sesión</h2> 
+<div class="card">
+  <div class="loader">
+
+    <div class="words">
+      <span class="word">SEGURO</span>
+      <span class="word">PRIVADO</span>
+      <span class="word">VPN</span>
+      <span class="word">CERRADO</span>
+      <span class="word">ENCRIPTADO</span>
+    </div>
+  </div>
+</div>
         <div id="error-message" class="error"></div>
         <form id="login-form">
             <label for="username">Usuario:</label>
@@ -34,10 +46,39 @@
 
         <button id="start-server">Encender Servidor</button>
         <button id="stop-server">Apagar Servidor</button>
+       
+<div class="group">
+  <svg stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon">
+  <path d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" stroke-linejoin="round" stroke-linecap="round"></path>
+</svg>
+<input class="input" type="password" placeholder="password">
+</div>
 
-        <h3>Área de Código</h3>
-        <textarea id="code-area" rows="10" cols="50" placeholder="Información Confidencial"></textarea><br><br>
-        
+        <h3>STATUS</h3> 
+<div class="terminal-loader">
+  <div class="terminal-header">
+    <div class="terminal-title">Status</div>
+    <div class="terminal-controls">
+      <div class="control close"></div>
+      <div class="control minimize"></div>
+      <div class="control maximize"></div>
+    </div>
+  </div>
+  <div class="text">Loading...</div>
+</div>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+</head>
+<body>
+    <button onclick="window.location.href='otra_pagina.html'">Ir a otra página</button>
+</body>
+</html>
+       
 
        
         

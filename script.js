@@ -47,3 +47,5 @@ document.getElementById('logout').addEventListener('click', function() {
     // Limpiar el formulario
     document.getElementById('login-form').reset();
 });
+
+
