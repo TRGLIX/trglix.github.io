@@ -1,8 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url("FONDO.jpg");
-    <img src="ad.png" width="110">
-    margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
