@@ -1,8 +1,8 @@
 // Datos de inicio de sesión: Arreglo de objetos con usuarios, contraseñas y páginas personalizadas
 const usuarios = [
-    { username: 'trglixstudios@apple.com', password: '12081986ru', redirectUrl: 'pagina-ruben.html' },
-    { username: 'Pablo', password: 'PABLITO2011', redirectUrl: 'pagina-pablo.html' },
-    { username: 'admin.web.trglix', password: '12081986ru', redirectUrl: 'pagina-admin.html' },
+    { username: 'ruben.saipol', password: '12081986ru', redirectUrl: 'pagina-ruben.html' },
+    { username: 'pablo.sanbal', password: 'PABLITO2011', redirectUrl: 'pagina-pablo.html' },
+    { username: 'usuario3', password: '12081986ru', redirectUrl: 'pagina-admin.html' },
     { username: 'usuario4', password: 'password4', redirectUrl: 'admin.page' },
     { username: 'usuario5', password: 'password5', redirectUrl: 'pagina-usuario5.html' }
 ];
@@ -66,4 +66,5 @@ function toggleSidebar() {
         mainContent.classList.add('full-width');
     }
 }
+
 
