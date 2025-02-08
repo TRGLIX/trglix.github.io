@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="styler4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Fuente moderna -->
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar closed">
+        <button id="close-btn" class="toggle-btn" aria-label="Cerrar sidebar" onclick="toggleSidebar()">&#x276F;</button>
+        <h2>Panel de Administración</h2>
+        <ul>
+            <li><a href="pagina-ruben.html">Inicio</a></li>
+            <li><a href="user.ruben.html">Usuarios</a></li>
+            <li><a href="https://statustrglix.betteruptime.com/" target="_blank">STATUS SERVER</a></li>
+            <li>
+                <iframe src="https://statustrglix.betteruptime.com/badge?theme=dark" width="150" height="40" frameborder="0" scrolling="no" aria-label="Estado del servidor"></iframe>
+            </li>
+            <li><a href="https://status.sapphirehost.cloud/" target="_blank">STATUS SERVER</a></li>
+            <li><a href="error404.html">EN MANTENIMIENTO</a></li>
+            <li>
+                <a href="archivos.rs.html">
+                    Archivos
+                    <img width="20" height="20" src="https://img.icons8.com/fluency/48/open-archive.png" alt="open-archive"/>
+                </a>
+            </li>
+            <li><a href="index.html" class="button logout-btn">Cerrar sesión</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content" class="main-content">
+        <button id="open-btn" class="toggle-btn" aria-label="Abrir sidebar" onclick="toggleSidebar()">&#x276E;</button>
+        <div class="content-header">
+            <img width="48" height="48" src="https://img.icons8.com/color/48/bash.png" alt="bash icon"/>
+            <h1>Bienvenido, Rubén</h1>
+            <img width="48" height="48" src="https://img.icons8.com/color/48/bash.png" alt="bash icon"/>
+        </div>
+        <p></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
