@@ -1,18 +1,18 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url("fondo\ 2.png");
+    background-image: url("TRGLIX.png");
     padding: 0;
     display: flex;
     border: px solid #ddd;
     justify-content: center;
-    align-items: center;
+    align-items:  center;
     height: 100vh;
     
 }
 
 .centered-container {
-    background-color: #0077ff;
-    border: px solid #ddd;
+    background-color: #c73d3d;
+    border: px solid #000000;
     padding: 20px;
     border: px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -264,7 +264,7 @@ button:hover {
   
   .input:focus, input:hover {
     outline: none;
-    border-color: rgba(129, 140, 248);
+    border-color: rgb(117, 197, 51);
     background-color: #fff;
     box-shadow: 0 0 0 5px rgb(129 140 248 / 30%);
   }
@@ -321,7 +321,7 @@ button:hover {
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
-  border: 2px solid #007bff;
+  border: 2px solid #000000;
 }
 
 /* Íconos dentro de los campos de entrada */
@@ -343,8 +343,8 @@ button:hover {
 
 /* Estilo para el botón */
 button {
-  background-color: #007bff;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
@@ -355,7 +355,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ffffff;
 }
 body {
     font-family: Arial, sans-serif;
@@ -544,5 +544,5 @@ body {
   border: 2px solid black; /* Borde negro de 2px para el contenedor principal */
   padding: 20px;
   border-radius: 10px; /* Bordes redondeados para el contenedor */
-  box-shadow: 0 0 90px #0077ff; /* Opcional: sombra para darle más profundidad */
+  box-shadow: 0 0 90px #000000; /* Opcional: sombra para darle más profundidad */
 }
