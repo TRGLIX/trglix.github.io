@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "trglix.github.io",
+  "Id": "f19d0d8c-0564-48fa-a2a3-e37ab8450127"
+}
