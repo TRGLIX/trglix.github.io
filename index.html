@@ -48,455 +48,427 @@
       opacity: 1;
       transition: opacity 0.5s ease;
     }
-    /* Pulsing logo */
-    .logo {
-      width: 300px;
-      filter: drop-shadow(0 0 20px white);
-      animation: pulso 2s infinite ease-in-out;
+    /* Video styling */
+    #loader video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    @keyframes pulso {
-      0%, 100% {
-        filter: drop-shadow(0 0 20px white);
-        opacity: 1;
-      }
-      50% {
-        filter: drop-shadow(0 0 40px white);
-        opacity: 0.7;
-      }
+
+    /* Video section styling */
+    .video_section {
+      padding: 50px 0;
+      background-color: #f7f7f7;
+    }
+
+    .video_section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .video_section .video_container {
+      text-align: center;
+    }
+
+    .video_section video {
+      max-width: 100%;
+      height: auto;
     }
   </style>
 </head>
 
 <body>
-  <!-- Loader with pulsing logo -->
+  <!-- Loader with video -->
   <div id="loader">
-    <img src="logotrglix.png" alt="Logo TRGLIX INC" class="logo">
+    <video autoplay muted loop>
+      <source src="Diseño sin título (1).mp4" type="video/mp4">
+      Tu navegador no soporta el formato de video.
+    </video>
   </div>
 
-  <!-- Main content hidden until loader finishes -->
-  <div id="main-content" style="display: none;">
+  <body>
 
-    <!—----------- INICIO CONTENIDO ORIGINAL -----------→
-    <!DOCTYPE html>
-    <html>
+    <div class="hero_area">
 
-    <head>
-      <!-- Basic -->
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <!-- Mobile Metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <!-- Site Metas -->
-      <meta name="keywords" content="" />
-      <meta name="description" content="" />
-      <meta name="author" content="" />
-      <link rel="shortcut icon" href="logotrglix.png" type="">
-
-      <title> TRGLIX INC </title>
-
-      <!-- bootstrap core css -->
-      <link rel="stylesheet" type="text/css" href="style.css" />
-
-      <!-- fonts style -->
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
-        rel="stylesheet">
-
-      <!--owl slider stylesheet -->
-      <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-      <!-- font awesome style -->
-      <link href="style4.css" rel="stylesheet" />
-
-      <!-- Custom styles for this template -->
-      <link href="style2.css" rel="stylesheet" />
-      <!-- responsive style -->
-      <link href="style3.css" rel="stylesheet" />
-
-    </head>
-
-    <body>
-
-      <div class="hero_area">
-
-        <div class="hero_bg_box">
-          <div class="bg_img_box">
-            <img src="hero-bg.png" alt="">
-          </div>
+      <div class="hero_bg_box">
+        <div class="bg_img_box">
+          <img src="hero-bg.png" alt="">
         </div>
-
-        <!-- header section starts -->
-        <header class="header_section">
-          <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg custom_nav-container ">
-              <a class="navbar-brand" href="index.html">
-                <span>
-                  TRGLIX INC
-                  <img src="logotrglix.png" alt="" height="50">
-                </span>
-              </a>
-
-              <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class=""> </span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  ">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.html"> Microsoft Azure</a>
-
-                    <li class="nav-item">
-                      <a class="nav-link" href="https://discord.com/"> <img src="Discord-Logo-White.png"
-                          height="20"></a>
-
-                  </li>
-                  <form class="form-inline">
-                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                  </form>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </header>
-        <!-- end header section -->
-        <!-- slider section -->
-        <section class="slider_section ">
-          <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="container ">
-                  <div class="row">
-                    <div class="col-md-6 ">
-                      <div class="detail-box">
-                        <h1>
-                          CONEXIÓN CON <br>
-                          GOOGLE
-                        </h1>
-                        <p>
-                          Proximamente
-                        </p>
-                        <div class="btn-box">
-                          <a href="" class="btn1">
-                            Read More
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="img-box">
-                        <img src="Google_2015_logo.svg.png" height="150">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item ">
-                <div class="container ">
-                  <div class="row">
-                    <div class="col-md-6 ">
-                      <div class="detail-box">
-                        <h1>
-                          Microsoft <br>
-                          Azure
-                        </h1>
-                        <p>
-                          Nuevo acceso con Microsoft Azure esto nos permite hacer cosas de administración y demas
-                          cosas de base de datos.
-                        <div class="btn-box">
-                          <a href="" class="btn1">
-                            Read More
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="img-box">
-                        <img src="Microsoft_Azure.svg.png">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="container ">
-                  <div class="row">
-                    <div class="col-md-6 ">
-                      <div class="detail-box">
-                        <h1>
-                          Acceso a <br>
-                          Samba 4
-                        </h1>
-                        <p>
-                          Proximamente acceso con Samba 4 Active Directory por problemas de acceso.
-                        </p>
-                        <div class="btn-box">
-                          <a href="" class="btn1">
-                            Read More
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="img-box">
-                        <img src="samba.png" alt="">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <ol class="carousel-indicators">
-              <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
-              <li data-target="#customCarousel1" data-slide-to="1"></li>
-              <li data-target="#customCarousel1" data-slide-to="2"></li>
-            </ol>
-          </div>
-
-        </section>
-        <!-- end slider section -->
       </div>
 
-      <!-- service section -->
-      <section class="service_section layout_padding">
-        <div class="service_container">
-          <div class="container ">
-            <div class="heading_container heading_center">
-              <h2>
-                NUESTROS <span>SERVICIOS</span>
-              </h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                alteration
-              </p>
+      <!-- header section starts -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                TRGLIX INC
+                <img src="logotrglix.png" alt="" height="50">
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> Microsoft Azure</a>
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://discord.com/"> <img src="Discord-Logo-White.png"
+                        height="20"></a>
+
+                </li>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
             </div>
-            <div class="row">
-              <div class="col-md-4 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="icons8-candado-100.png" alt="">
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+      <!-- slider section -->
+      <section class="slider_section ">
+        <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h1>
+                        CONEXIÓN CON <br>
+                        GOOGLE
+                      </h1>
+                      <p>
+                        
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <div class="detail-box">
-                    <h5>
-                      PROTECCIÓN SEGURA
-                    </h5>
-                    <p>
-                      Te ofrecemos un servicio de VPN para que pueda estas seguro de los ciberdelincuentes.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="icons8-archivo-100.png" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      Seguridad de Datos
-                    </h5>
-                    <p>
-                      Te podemos ofrezer una proteccion de datos a traves de tu web a traves de nuestros servidores.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="Microsoft_Azure.svg.png" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      Azure
-                    </h5>
-                    <p>
-                      Programación de Azure con servicios completos y domain login asegurado en el contrato.
-                    </p>
-                    <a href="">
-                      Read More
-                    </a>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="Google_2015_logo.svg.png" height="150">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="btn-box">
-              <a href="">
-                View All
-              </a>
+            <div class="carousel-item ">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h1>
+                        Microsoft <br>
+                        Azure
+                      </h1>
+                      <p>
+                        Nuevo acceso con Microsoft Azure esto nos permite hacer cosas de administración y demas
+                        cosas de base de datos.
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="Microsoft_Azure.svg.png">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="container ">
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <div class="detail-box">
+                      <h1>
+                        Acceso a <br>
+                        Samba 4
+                      </h1>
+                      <p>
+                        Proximamente acceso con Samba 4 Active Directory por problemas de acceso.
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn1">
+                          Read More
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="img-box">
+                      <img src="samba.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <!-- about section -->
-      <section class="about_section layout_padding">
-        <div class="container  ">
+          <ol class="carousel-indicators">
+            <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#customCarousel1" data-slide-to="1"></li>
+            <li data-target="#customCarousel1" data-slide-to="2"></li>
+          </ol>
+        </div>
+
+      </section>
+      <!-- end slider section -->
+    </div>
+
+    <!-- service section -->
+    <section class="service_section layout_padding">
+      <div class="service_container">
+        <div class="container ">
           <div class="heading_container heading_center">
             <h2>
-              Sobre <span>Nosotros</span>
+              NUESTROS <span>SERVICIOS</span>
             </h2>
             <p>
-              Empresa desde 2021
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+              alteration
             </p>
           </div>
           <div class="row">
-            <div class="col-md-6 ">
-              <div class="img-box">
-                <img src="logotrglix.png" alt="">
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="detail-box">
-                <h3>
-                  Somos TRGLIX INC
-                </h3>
-                <p>
-                  Somos una empresa privada ademas que ofrecemos varios servicios que podrian interesar.
-                </p>
-                <p>
-                  Espero que sigamos asi,y que siga creciendo la empresa.
-                <a href="">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- info section -->
-      <section class="info_section layout_padding2">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-lg-3 info_col">
-              <div class="info_contact">
-                <h4>
-                  Address
-                </h4>
-                <div class="contact_link_box">
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="icons8-candado-100.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    PROTECCIÓN SEGURA
+                  </h5>
+                  <p>
+                    Te ofrecemos un servicio de VPN para que pueda estas seguro de los ciberdelincuentes.
+                  </p>
                   <a href="">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>
-                      demo@gmail.com
-                    </span>
-                  </a>
-                </div>
-              </div>
-              <div class="info_social">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-3 info_col">
-              <div class="info_detail">
-                <h4>
-                  Info
-                </h4>
-                <p>
-                  necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
-                  words.
-                </p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-2 mx-auto info_col">
-              <div class="info_link_box">
-                <h4>
-                  Links
-                </h4>
-                <div class="info_links">
-                  <a class="active" href="index.html">
-                    Home
-                  </a>
-                  <a class="" href="about.html">
-                    About
-                  </a>
-                  <a class="" href="service.html">
-                    Services
-                  </a>
-                  <a class="" href="why.html">
-                    Why Us
-                  </a>
-                  <a class="" href="team.html">
-                    Team
+                    Read More
                   </a>
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3 info_col ">
-              <h4>
-                Subscribe
-              </h4>
-              <form action="#">
-                <input type="text" placeholder="Enter email" />
-                <button type="submit">
-                  Subscribe
-                </button>
-              </form>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="icons8-archivo-100.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Seguridad de Datos
+                  </h5>
+                  <p>
+                    Te podemos ofrezer una proteccion de datos a traves de tu web a traves de nuestros servidores.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 ">
+              <div class="box ">
+                <div class="img-box">
+                  <img src="Microsoft_Azure.svg.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Azure
+                  </h5>
+                  <p>
+                    Programación de Azure con servicios completos y domain login asegurado en el contrato.
+                  </p>
+                  <a href="">
+                    Read More
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
+          <div class="btn-box">
+            <a href="">
+              View All
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- footer section -->
-      <section class="footer_section">
-        <div class="container">
+    <!-- about section -->
+    <section class="about_section layout_padding">
+      <div class="container  ">
+        <div class="heading_container heading_center">
+          <h2>
+            Sobre <span>Nosotros</span>
+          </h2>
           <p>
-            &copy; <span id="displayYear"></span> All Rights Reserved By
-            <a href="https://html.design/">TRGLIX INC</a>
+            Empresa desde 2021
           </p>
         </div>
-      </section>
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="img-box">
+              <img src="logotrglix.png" alt="">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h3>
+                Somos TRGLIX INC
+              </h3>
+              <p>
+                Somos una empresa privada ademas que ofrecemos varios servicios que podrian interesar.
+              </p>
+              <p>
+                Espero que sigamos asi,y que siga creciendo la empresa.
+              <a href="">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    </body>
-    </html>
-    <!—----------- FIN CONTENIDO ORIGINAL -----------→
+    <!-- info section -->
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_contact">
+              <h4>
+                Address
+              </h4>
+              <div class="contact_link_box">
+                <a href="">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <span>
+                    demo@gmail.com
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col">
+            <div class="info_detail">
+              <h4>
+                Info
+              </h4>
+              <p>
+                necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin
+                words.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-2 mx-auto info_col">
+            <div class="info_link_box">
+              <h4>
+                Links
+              </h4>
+              <div class="info_links">
+                <a class="active" href="index.html">
+                  Home
+                </a>
+                <a class="" href="about.html">
+                  About
+                </a>
+                <a class="" href="service.html">
+                  Services
+                </a>
+                <a class="" href="why.html">
+                  Why Us
+                </a>
+                <a class="" href="team.html">
+                  Team
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 info_col ">
+            <h4>
+              Subscribe
+            </h4>
+            <form action="#">
+              <input type="text" placeholder="Enter email" />
+              <button type="submit">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
-  <!-- end main-content -->
+    <!-- footer section -->
+    <section class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">TRGLIX INC</a>
+        </p>
+      </div>
+    </section>
 
-  <!-- Scripts -->
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="custom.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=myMap"></script>
+  </body>
+  </html>
+  <!—----------- FIN CONTENIDO ORIGINAL -----------→
 
-  <script>
-    window.addEventListener("load", function () {
-      setTimeout(function () {
-        const loader = document.getElementById("loader");
-        loader.style.opacity = "0";
-        setTimeout(() => {
-          loader.style.display = "none";
-          document.getElementById("main-content").style.display = "block";
-        }, 500);
-      }, 2000);
-    });
-  </script>
+</div>
+<!-- end main-content -->
+
+<!-- Scripts -->
+<script src="jquery-3.4.1.min.js"></script>
+<script src="bootstrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="custom.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=myMap"></script>
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = "0";
+      setTimeout(() => {
+        loader.style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      }, 500);
+    }, 2000);
+  });
+</script>
 </body>
 
 </html>
