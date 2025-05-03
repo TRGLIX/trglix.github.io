@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft | Innovación sin límites</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0067b8'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-sans">
+  <div id="tsparticles" class="fixed inset-0 z-0"></div>
+
+  <!-- Header -->
+  <header class="relative z-10 bg-white/50 dark:bg-gray-800/50 backdrop-blur sticky top-0 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Logo de Microsoft" class="h-8 w-auto">
+        <h1 class="text-2xl font-bold">Microsoft</h1>
+      </div>
+      <a href="index.html">Inicio</a>
+      <button id="toggleDark" class="rounded-full px-4 py-2 border border-gray-500 text-sm hover:bg-gray-200 dark:hover:bg-gray-700">Modo Oscuro</button>
+      
+      
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative z-10 text-center py-20 px-6">
+    <h2 class="text-4xl font-bold mb-4">Innovación sin límites</h2>
+    <p class="text-lg mb-6 max-w-2xl mx-auto">Microsoft transforma la tecnología en soluciones que conectan al mundo entero desde 1975.</p>
+    <a href="https://www.microsoft.com" target="_blank" class="inline-block px-6 py-3 bg-primary text-white rounded-full hover:bg-blue-800 transition">Visitar Microsoft</a>
+  </section>
+
+  <!-- Cards -->
+  <section class="relative z-10 max-w-6xl mx-auto px-6 py-16 grid gap-8 md:grid-cols-3">
+    <div class="bg-white/10 dark:bg-gray-700/30 backdrop-blur rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">¿Quiénes son?</h3>
+      <p>Microsoft fue fundada por Bill Gates y Paul Allen, y se ha convertido en una potencia global en software, IA y computación en la nube.</p>
+    </div>
+    <div class="bg-white/10 dark:bg-gray-700/30 backdrop-blur rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">Productos estrella</h3>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Windows & Office</li>
+        <li>Azure Cloud</li>
+        <li>GitHub & VS Code</li>
+        <li>Xbox & Game Pass</li>
+        <li>Teams & LinkedIn</li>
+      </ul>
+    </div>
+    <div class="bg-white/10 dark:bg-gray-700/30 backdrop-blur rounded-xl p-6 shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">Innovación global</h3>
+      <p>Microsoft lidera con IA, accesibilidad, sostenibilidad y herramientas para desarrolladores en más de 190 países.</p>
+    </div>
+  </section>
+
+  <footer class="relative z-10 text-center py-10 text-sm text-gray-500 dark:text-gray-400">
+    &copy; 2025 TRGLIX INC
+  </footer>
+
+  <script>
+    tsParticles.load("tsparticles", {
+      fullScreen: { enable: false },
+      background: { color: "transparent" },
+      particles: {
+        number: { value: 60 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3 },
+        size: { value: 2 },
+        move: {
+          enable: true,
+          speed: 0.5,
+          direction: "none",
+          outModes: { default: "bounce" }
+        },
+        links: {
+          enable: true,
+          distance: 150,
+          color: "#ffffff",
+          opacity: 0.2,
+          width: 1
+        }
+      }
+    });
+
+    // Toggle dark mode
+    const toggle = document.getElementById('toggleDark');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>
