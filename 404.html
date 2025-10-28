@@ -1,149 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>404 HTML Template by Colorlib</title>
-
-  <!-- Google font -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
-
-  <!-- CSS integrado -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>404 — Página no encontrada | Canal Media</title>
+  <meta name="description" content="Página de error 404 de Canal Media con estilo teletexto auténtico">
   <style>
-    * {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
+    @font-face {
+      font-family: 'EuropeanTeletext';
+      src: url('EuropeanTeletext.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
+
+    :root {
+      --bg: #000;
+      --blue: #00b4ff;
+      --orange: #ff7b00;
+      --green: #00ff00;
+      --yellow: #ffff00;
+      --red: #ff0000;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
 
     body {
-      padding: 0;
-      margin: 0;
+      font-family: 'EuropeanTeletext', monospace;
+      background: var(--bg);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-transform: uppercase;
     }
 
-    #notfound {
+    .screen {
       position: relative;
-      height: 100vh;
-      background: #030005;
-    }
-
-    #notfound .notfound {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
-
-    .notfound {
-      max-width: 767px;
-      width: 100%;
+      background: #000;
+      border: 4px solid var(--green);
+      width: 90%;
+      max-width: 850px;
+      padding: 40px 30px;
       line-height: 1.4;
-      text-align: center;
+      box-shadow: 0 0 40px rgba(0,255,0,0.15);
     }
 
-    .notfound .notfound-404 {
-      position: relative;
-      height: 180px;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      color: var(--yellow);
+      border-bottom: 2px solid var(--yellow);
+      padding-bottom: 10px;
       margin-bottom: 20px;
-      z-index: -1;
+      font-size: 1.1rem;
     }
 
-    .notfound .notfound-404 h1 {
-      font-family: 'Montserrat', sans-serif;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      font-size: 224px;
-      font-weight: 900;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      margin-left: -12px;
-      color: #030005;
-      text-transform: uppercase;
-      text-shadow: -1px -1px 0px #0099ff, 1px 1px 0px #ff7b00;
-      letter-spacing: -20px;
+    h1 {
+      color: var(--red);
+      font-size: 5rem;
+      text-shadow: 0 0 8px var(--red);
+      margin-bottom: 10px;
     }
 
-    .notfound .notfound-404 h2 {
-      font-family: 'Montserrat', sans-serif;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 110px;
-      font-size: 42px;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      text-shadow: 0px 2px 0px #ff7b00;
-      letter-spacing: 13px;
-      margin: 0;
+    .sub {
+      color: var(--green);
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
 
-    .notfound a {
-      font-family: 'Montserrat', sans-serif;
-      display: inline-block;
-      text-transform: uppercase;
-      color: #ff5100;
+    p {
+      color: var(--white);
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+
+    .actions a {
+      color: var(--blue);
       text-decoration: none;
-      border: 2px solid;
-      background: transparent;
-      padding: 10px 40px;
-      font-size: 14px;
-      font-weight: 700;
-      -webkit-transition: 0.2s all;
-      transition: 0.2s all;
+      font-weight: bold;
+      margin-right: 25px;
     }
 
-    .notfound a:hover {
-      color: #ff7300;
+    .actions a:hover {
+      color: var(--orange);
     }
 
-    @media only screen and (max-width: 767px) {
-      .notfound .notfound-404 h2 {
-        font-size: 24px;
-      }
+    .footer {
+      border-top: 2px solid var(--yellow);
+      color: var(--green);
+      margin-top: 30px;
+      padding-top: 10px;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
     }
 
-    @media only screen and (max-width: 480px) {
-      .notfound .notfound-404 h1 {
-        font-size: 182px;
-      }
+    .blink {
+      animation: blink 1s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .scanlines::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.04) 0px,
+        rgba(255,255,255,0.04) 1px,
+        rgba(0,0,0,0.04) 2px,
+        rgba(0,0,0,0.04) 3px
+      );
+      pointer-events: none;
+      z-index: 10;
+      animation: flicker 2s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+      20%, 24%, 55% { opacity: 0.5; }
     }
   </style>
-
-  <meta name="robots" content="noindex, follow">
 </head>
-
 <body>
-
-  <div id="notfound">
-    <div class="notfound">
-      <div class="notfound-404">
-        <h1>404</h1>
-        <h2>Error</h2>
-        
-      </div>
-      <a href="https://trglix.github.io">Homepage</a>
-      
-      
+  <div class="scanlines"></div>
+  <div class="screen">
+    <div class="header">
+      <span>Nexo TV</span>
+      <span>PÁG 404</span>
+    </div>
+    <h1>404</h1>
+    <div class="sub">SEÑAL NO ENCONTRADA</div>
+    <p>La página solicitada no está disponible o fue movida. Use el control remoto o vuelva al menú principal.</p>
+    <div class="actions">
+      <a href="/">▶ Inicio</a>
+      <a href="/contact">☎ Contacto</a>
+    </div>
+    <div class="footer">
+      <span>Nexo TV © 2025</span>
+      <span class="blink">▮</span>
     </div>
   </div>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-23581568-13');
-  </script>
 </body>
-
 </html>
