@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRS | IA</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
+     crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000;
+        color: white;
+        overflow-x: hidden;
+      }
+      .gradient-bottom {
+        background: linear-gradient(to top, #d83b00 0%, transparent 70%);
+        filter: blur(5px);
+      }
+      .floating {
+        animation: float 8s ease-in-out infinite alternate;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-30px); }
+      }
+      .gradient-bg {
+        background: radial-gradient(
+          600px circle at 50% 100%,
+          rgba(255, 60, 0, 0.3),
+          transparent 70%
+        ),
+        radial-gradient(
+          400px circle at 80% 20%,
+          rgba(0, 140, 255, 0.2),
+          transparent 80%
+        ),
+        radial-gradient(
+          500px circle at 20% 40%,
+          rgba(255, 153, 0, 0.1),
+          transparent 80%
+        );
+        filter: blur(100px);
+      }
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .outer-cont {
+        padding: 12px 20px;
+        border: none;
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+        background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
+        border-radius: 12px;
+        color: #fff;
+        transition: all 0.3s ease;
+        box-shadow:
+          inset 0px 0px 5px #ffffffa9,
+          inset 0px 35px 30px #000,
+          0px 5px 10px #000000cc;
+        text-shadow: 1px 1px 1px #000;
+      }
+      .outer-cont::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border-radius: 12px;
+        filter: blur(0);
+        z-index: -1;
+        box-shadow: none;
+        background: conic-gradient(
+          #00000000 80deg,
+          #40baf7,
+          #f34ad7,
+          #5bfcc4,
+          #00000000 280deg
+        );
+        transition: all 0.3s ease;
+      }
+      .outer-cont:hover::before {
+        filter: blur(15px);
+      }
+      .outer-cont:active::before {
+        filter: blur(5px);
+        transform: translateY(1px);
+      }
+      .outer-cont:active {
+        box-shadow:
+          inset 0px 0px 5px #ffffffa9,
+          inset 0px 35px 30px #000;
+        margin-top: 3px;
+      }
+      button:hover {
+        transform: translate(5px, -5px);
+      }
+
+      /* Texto justificado */
+      .justificado {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        max-width: 800px;
+        margin: 20px auto;
+        line-height: 1.8;
+      }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+      .animate-scroll {
+        animation: scroll 25s linear infinite;
+      }
+    </style>
+  </head>
+
+  <body class="relative overflow-x-hidden">
+    <!-- Background gradients -->
+    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
+    <div class="gradient-bottom absolute bottom-0 left-0 w-full h-64 -z-10"></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50">
+      <div class="flex items-center gap-2 text-lg font-bold">
+        TRS <span>TRGLIX STUDIOS</span>
+      </div>
+      <nav class="flex items-center gap-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+        
+        <a href="AIDOCU.html" class="text-gray-400 hover:text-white transition">Implementación IA</a>
+        <a href="support.html" class="text-gray-400 hover:text-white transition">Soporte</a>
+        <div class="outer-cont flex">
+          <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none">
+              <path d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/>
+              <path d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2" fill="currentColor"/>
+            </g>
+          </svg>
+          LOGIN
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32">
+      <h1 class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight">
+        Implementación IA <br />
+      </h1>
+
+      <p class="mt-6 text-gray-400 text-lg max-w-2xl leading-relaxed">
+        Aqui hablamos sobre la IA.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4"></div>
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+     <!-- ================= VIDEO SECTION ================= -->
+<section class="px-6 py-16 flex justify-center">
+  <video class="rounded-lg shadow-lg" width="800" controls>
+    <source src="¿Qué es la inteligencia artificial.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de videos.
+  </video>
+</section>
+
+
+    <section class="px-6 py-16">
+      <p class="justificado">
+       La inteligencia artificial (IA) es una disciplina de la informática que se centra en el desarrollo de sistemas capaces de llevar a cabo tareas que, a priori, requieren de la inteligencia humana. Entender lenguaje, identificar patrones, aprender de la experiencia, tomar decisiones o resolver problemas complejos son algunos de esos objetivos.
+
+El software tradicional se basa en ejecutar a rajatabla las instrucciones que haya recibido. Por su parte, la IA puede aprender y perfeccionarse con el tiempo usando técnicas como el machine learning y el deep learning. Así, las máquinas se pueden enfrentar a un volumen enorme de datos y detectar conexiones que a los humanos nos pasarían desapercibidas.
+
+De hecho, la inteligencia artificial ya está presente en nuestro día a día: en los asistentes virtuales, en los sistemas que nos recomiendan qué escuchar o ver, en los coches no tan antiguos, en el diagnóstico de enfermedades o, incluso, en el análisis de ingentes cantidades de datos científicos. Y es que su capacidad para agilizar las tareas y para encontrar soluciones rápidas la hacen imprescindible en (casi) cualquier ámbito.
+
+Eso sí, no está exenta de problemas. Ética, privacidad o el impacto en el empleo son tres asuntos sobre los que hay que poner el foco para que su desarrollo sea seguro y responsable. La IA no es sólo una tecnología del mañana: es una realidad que ya está cambiando el hoy y que, lo quiera o no, seguirá chocando contra los límites de lo posible.
+      </p>
+    </section>
+
+    <!-- ================= CTA SECTION ================= -->
+    <section class="py-28 px-6 text-center bg-gradient-to-t from-orange-500/10 via-black to-black">
+      <h2 class="text-5xl font-extrabold mb-8">
+        TRGLIX STUDIOS <span class="text-orange-400">Desde el 2020</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+        Con Expericiencia desde el 2020.
+      </p>
+      <button class="bg-orange-500 hover:bg-orange-400 text-black font-bold text-lg px-10 py-4 rounded-full transition transform hover:scale-105 shadow-lg">
+        Más Información
+      </button>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black">
+      <p>&copy; TRGLIX INC. All rights reserved.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Status</a>
+      </div>
+    </footer>
+  </body>
+</html>

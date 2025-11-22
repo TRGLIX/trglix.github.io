@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información - TRGLIX STUDIOS</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      .gradient-bg {
+        background: radial-gradient(
+          600px circle at 50% 100%,
+          rgba(255, 60, 0, 0.3),
+          transparent 70%
+        ),
+        radial-gradient(
+          400px circle at 80% 20%,
+          rgba(0, 140, 255, 0.2),
+          transparent 80%
+        ),
+        radial-gradient(
+          500px circle at 20% 40%,
+          rgba(255, 153, 0, 0.1),
+          transparent 80%
+        );
+        filter: blur(100px);
+      }
+
+      .floating {
+        animation: float 8s ease-in-out infinite alternate;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-30px); }
+      }
+
+      .justificado {
+        text-align: justify !important;
+        text-justify: inter-word !important;
+        max-width: 800px;
+        margin: 20px auto;
+        line-height: 1.8;
+      }
+
+      .btn-gradient {
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #0c174b, #0c174b, #0c174b);
+        color: #fff;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-shadow: 1px 1px 1px #000;
+      }
+      .btn-gradient:hover {
+        filter: brightness(1.2);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body class="relative overflow-x-hidden">
+
+    <!-- Background gradients -->
+    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50">
+      <div class="flex items-center gap-2 text-lg font-bold">
+        TRS <span>TRGLIX STUDIOS</span>
+      </div>
+      <nav class="flex items-center gap-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+        <a href="info.html" class="text-gray-400 hover:text-white transition">Información</a>
+        <a href="AIDOCU.html" class="text-gray-400 hover:text-white transition">Implementación IA</a>
+        <a href="support.html" class="text-gray-400 hover:text-white transition">Soporte</a>
+        <div class="outer-cont flex">
+          LOGIN
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= HERO / INFO SECTION ================= -->
+    <section class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32">
+      <h1 class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight mb-6 text-orange-500">
+        Hosting con IA
+      </h1>
+
+      <p class="text-gray-400 text-lg max-w-2xl leading-relaxed mb-8">
+        Proximamente soporte con ChatGPT
+      </p>
+
+      <a href="index.html" class="btn-gradient">Volver al inicio</a>
+    </section>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black">
+      <p>&copy; TRGLIX INC. All rights reserved.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Status</a>
+      </div>
+    </footer>
+
+  </body>
+</html>

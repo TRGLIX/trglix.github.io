@@ -37,6 +37,10 @@ body {
   color: #f1f1f1;
   font-weight: 600;
 }
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 .inputForm {
   border: 1.5px solid #333;

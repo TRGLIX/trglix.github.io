@@ -1,151 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>404 — Página no encontrada | Canal Media</title>
-  <meta name="description" content="Página de error 404 de Canal Media con estilo teletexto auténtico">
-  <style>
-    @font-face {
-      font-family: 'EuropeanTeletext';
-      src: url('EuropeanTeletext.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada</title>
 
-    :root {
-      --bg: #000;
-      --blue: #00b4ff;
-      --orange: #ff7b00;
-      --green: #00ff00;
-      --yellow: #ffff00;
-      --red: #ff0000;
-      --white: #ffffff;
-    }
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-    body {
-      font-family: 'EuropeanTeletext', monospace;
-      background: var(--bg);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      text-transform: uppercase;
-    }
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000;
+        color: #fff;
+        overflow-x: hidden;
+      }
 
-    .screen {
-      position: relative;
-      background: #000;
-      border: 4px solid var(--green);
-      width: 90%;
-      max-width: 850px;
-      padding: 40px 30px;
-      line-height: 1.4;
-      box-shadow: 0 0 40px rgba(0,255,0,0.15);
-    }
+      .gradient-bg {
+        background: radial-gradient(
+          600px circle at 50% 100%,
+          rgba(255, 60, 0, 0.3),
+          transparent 70%
+        ),
+        radial-gradient(
+          400px circle at 80% 20%,
+          rgba(0, 140, 255, 0.2),
+          transparent 80%
+        ),
+        radial-gradient(
+          500px circle at 20% 40%,
+          rgba(255, 153, 0, 0.1),
+          transparent 80%
+        );
+        filter: blur(100px);
+      }
 
-    .header {
-      display: flex;
-      justify-content: space-between;
-      color: var(--yellow);
-      border-bottom: 2px solid var(--yellow);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
+      .floating {
+        animation: float 8s ease-in-out infinite alternate;
+      }
 
-    h1 {
-      color: var(--red);
-      font-size: 5rem;
-      text-shadow: 0 0 8px var(--red);
-      margin-bottom: 10px;
-    }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-30px); }
+      }
 
-    .sub {
-      color: var(--green);
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
+      .btn-gradient {
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 12px;
+        background: linear-gradient(90deg, #150f2b, #150f2b, #150f2b);
+        color: #fff;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-shadow: 1px 1px 1px #000;
+      }
+      .btn-gradient:hover {
+        filter: brightness(1.2);
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
 
-    p {
-      color: var(--white);
-      margin-bottom: 20px;
-      font-size: 1rem;
-    }
+  <body class="relative flex flex-col items-center justify-center min-h-screen text-center px-6">
 
-    .actions a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 25px;
-    }
+    <!-- Background gradients -->
+    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
 
-    .actions a:hover {
-      color: var(--orange);
-    }
+    <!-- 404 Content -->
+    <h1 class="text-9xl md:text-[12rem] font-extrabold mb-6 text-orange-500">404</h1>
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Página no encontrada</h2>
+    <p class="text-gray-400 text-lg max-w-2xl mb-8">
+      Lo sentimos, la página que estás buscando no existe o ha sido movida.
+    </p>
 
-    .footer {
-      border-top: 2px solid var(--yellow);
-      color: var(--green);
-      margin-top: 30px;
-      padding-top: 10px;
-      font-size: 0.9rem;
-      display: flex;
-      justify-content: space-between;
-    }
+    <a href="index.html" class="btn-gradient">
+      Volver al inicio
+    </a>
 
-    .blink {
-      animation: blink 1s step-start infinite;
-    }
+    <!-- Optional floating effect for background -->
+    <div class="absolute bottom-0 left-0 w-full h-64 -z-20"></div>
 
-    @keyframes blink {
-      50% { opacity: 0; }
-    }
-
-    .scanlines::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.04) 0px,
-        rgba(255,255,255,0.04) 1px,
-        rgba(0,0,0,0.04) 2px,
-        rgba(0,0,0,0.04) 3px
-      );
-      pointer-events: none;
-      z-index: 10;
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-      20%, 24%, 55% { opacity: 0.5; }
-    }
-  </style>
-</head>
-<body>
-  <div class="scanlines"></div>
-  <div class="screen">
-    <div class="header">
-      <span>Nexo TV</span>
-      <span>PÁG 404</span>
-    </div>
-    <h1>404</h1>
-    <div class="sub">SEÑAL NO ENCONTRADA</div>
-    <p>La página solicitada no está disponible o fue movida. Use el control remoto o vuelva al menú principal.</p>
-    <div class="actions">
-      <a href="/">▶ Inicio</a>
-      <a href="/contact">☎ Contacto</a>
-    </div>
-    <div class="footer">
-      <span>Nexo TV © 2025</span>
-      <span class="blink">▮</span>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
