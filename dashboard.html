@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — TRGLIX</title>
+
+  <!-- Fuente Stack Sans Notch -->
+  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js v4 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#0b0e13;
+      --sidebar:#0f121a;
+      --card:#151922;
+      --border:rgba(255,255,255,0.08);
+      --accent1:#567cff;
+      --accent2:#875aff;
+      --muted:#b7b7b7;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:'Stack Sans Notch',sans-serif; background:var(--bg); color:#fff}
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 28px;
+      padding: 28px;
+      align-items: start;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      height: calc(100vh - 56px);
+      position: sticky;
+      top: 28px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      padding: 18px;
+      backdrop-filter: blur(8px);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .brand {
+      display:flex; align-items:center; gap:12px; margin-bottom:6px;
+    }
+    .brand img { width:56px; border-radius:8px; filter: drop-shadow(0 6px 20px rgba(80,120,255,0.12)); }
+    .brand h2 { font-size:1rem; margin:0; }
+    .brand .sub { font-size:0.8rem; color:var(--muted); }
+
+    .nav { margin-top:8px; display:flex; flex-direction:column; gap:8px; }
+    .nav a { color:#dfefff; text-decoration:none; padding:10px; border-radius:8px; display:flex; gap:12px; align-items:center; font-size:0.95rem; cursor:pointer; }
+    .nav a.active, .nav a:hover { background: linear-gradient(90deg,var(--accent1),var(--accent2)); color:#fff; box-shadow: 0 8px 30px rgba(80,110,255,0.12); }
+
+    .spacer { flex:1; }
+
+    /* MAIN */
+    .main {
+      padding: 18px;
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--border);
+      min-height: calc(100vh - 56px);
+    }
+
+    .header {
+      display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:18px;
+    }
+    .header .welcome { font-size:1.05rem; color:#eaf2ff; }
+    .header .actions { display:flex; gap:10px; align-items:center; }
+
+    .badge { padding:8px 12px; border-radius:10px; background:linear-gradient(90deg,var(--accent1),var(--accent2)); font-weight:600; box-shadow: 0 8px 30px rgba(80,110,255,0.12); }
+
+    /* Grid */
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-bottom:18px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius:12px;
+      padding:16px;
+    }
+    .card h3 { margin:0 0 8px; font-size:0.95rem; color:#fff; }
+    .stat { font-size:1.9rem; font-weight:700; margin-top:6px; color:#fff; }
+
+    /* Chart area */
+    .charts { display:grid; grid-template-columns: 1fr 420px; gap:16px; margin-bottom:18px; align-items:start; }
+    .chart-card { padding:16px; border-radius:12px; background: var(--card); border:1px solid var(--border); }
+
+    /* activity list */
+    .activity-list { display:flex; flex-direction:column; gap:10px; margin-top:12px; max-height:260px; overflow:auto; }
+
+    /* small */
+    .small { color:var(--muted); font-size:0.9rem; }
+
+    /* responsive */
+    @media (max-width:1000px){
+      .app { grid-template-columns: 1fr; padding:18px; }
+      .sidebar { position: static; height:auto; display:flex; flex-direction:row; gap:12px; overflow:auto; padding:12px; align-items:center; }
+      .brand h2{display:none}
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .charts{ grid-template-columns: 1fr; }
+    }
+    @media (max-width:520px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    /* tiny UI tweaks for chart legend area */
+    .chart-legend { display:flex; gap:12px; align-items:center; margin-top:10px; color:var(--muted); font-size:0.9rem; }
+    .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+  </style>
+</head>
+<body>
+  <div class="app" role="application">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="sidebar">
+      <div class="brand">
+        <img src="/mnt/data/escudo.gif" alt="logo TRGLIX">
+        <div>
+          <h2>TRGLIX AI</h2>
+          <div class="sub">Seguridad con IA</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="navegación">
+        <a class="active" data-section="overview">📊 Overview</a>
+        <a data-section="incidents">⚠ Incidentes</a>
+        <a data-section="alerts">🔔 Alertas</a>
+        <a data-section="settings">⚙ Ajustes</a>
+      </nav>
+
+      <div class="spacer"></div>
+
+      <div style="border-top:1px solid var(--border); padding-top:12px;">
+        <div class="small" id="userEmail">Cargando usuario...</div>
+        <button id="logoutBtn" style="margin-top:8px; width:100%; padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:#eaf2ff; cursor:pointer;">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main" id="mainArea">
+      <div class="header">
+        <div>
+          <div class="welcome" id="welcomeTxt">Bienvenido</div>
+          <div class="small" id="timeTxt"></div>
+        </div>
+        <div class="actions">
+          <div class="badge" id="statusBadge">Sistema OK</div>
+        </div>
+      </div>
+
+      <!-- quick stats -->
+      <div class="grid">
+        <div class="card">
+          <h3>Incidentes detectados</h3>
+          <div class="stat" id="statInc">3</div>
+          <div class="small">Últimas 24 horas</div>
+        </div>
+
+        <div class="card">
+          <h3>Alertas críticas</h3>
+          <div class="stat" id="statAlerts">1</div>
+          <div class="small">Requieren atención</div>
+        </div>
+
+        <div class="card">
+          <h3>Accesos recientes</h3>
+          <div class="stat" id="statAccess">482</div>
+          <div class="small">Últimos 7 días</div>
+        </div>
+      </div>
+
+      <!-- charts -->
+      <div class="charts">
+        <div class="chart-card">
+          <h3>Trafico / Intentos por hora</h3>
+          <canvas id="barChart" aria-label="Gráfica de barras de tráfico" role="img" style="width:100%; height:260px;"></canvas>
+          <div class="chart-legend">
+            <div class="dot" style="background:#567cff"></div> Intentos entrantes
+            &nbsp;&nbsp;&nbsp;
+            <div class="dot" style="background:#ff7a7a"></div> Bloqueados
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <h3>Actividad reciente</h3>
+          <div id="activityList" class="activity-list"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Resumen</h3>
+        <p class="small">Gráfica en vivo (simulada en cliente). Para datos reales, conecta tu backend.</p>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // --- Auth: require localStorage item created by login.html ---
+    const authRaw = localStorage.getItem('trglix_user');
+    if (!authRaw) {
+      location.href = 'login.html';
+    }
+    const auth = JSON.parse(authRaw);
+    document.getElementById('welcomeTxt').textContent = 'Bienvenido, ' + (auth.name || auth.email);
+    document.getElementById('userEmail').textContent = auth.email || '';
+    document.getElementById('timeTxt').textContent = new Date().toLocaleString();
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('trglix_user');
+      location.href = 'login.html';
+    });
+
+    // --- Simulated data source (client-side) ---
+    // We will simulate two metrics per time bucket:
+    // attempts = total attempts, blocked = portion blocked.
+    // The chart shows last N buckets (hours/minutes depending).
+    const MAX_BUCKETS = 12;
+    let labels = [];         // e.g. ['10:00','11:00',...]
+    let attemptsData = [];
+    let blockedData = [];
+
+    // helper: generate initial labels and values
+    function seedData() {
+      labels = [];
+      attemptsData = [];
+      blockedData = [];
+      const now = new Date();
+      for (let i = MAX_BUCKETS - 1; i >= 0; i--) {
+        const t = new Date(now.getTime() - i * 60 * 60 * 1000); // hourly buckets
+        labels.push(t.getHours().toString().padStart(2,'0') + ':00');
+        const attempts = Math.floor(30 + Math.random()*120); // 30..150
+        const blocked = Math.floor(attempts * (0.05 + Math.random()*0.35)); // 5%-40%
+        attemptsData.push(attempts);
+        blockedData.push(blocked);
+      }
+    }
+
+    seedData();
+
+    // --- Chart.js setup ---
+    const ctx = document.getElementById('barChart').getContext('2d');
+
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Intentos',
+            data: attemptsData,
+            backgroundColor: '#567cff',
+            borderRadius: 6,
+            barPercentage: 0.65
+          },
+          {
+            label: 'Bloqueados',
+            data: blockedData,
+            backgroundColor: '#ff7a7a',
+            borderRadius: 6,
+            barPercentage: 0.65
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 700 },
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          x: {
+            stacked: false,
+            grid: { display: false, drawBorder: false },
+            ticks: { color: '#d6d6d6' }
+          },
+          y: {
+            beginAtZero: true,
+            ticks: { color: '#d6d6d6' },
+            grid: { color: 'rgba(255,255,255,0.03)' }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#0f1724',
+            titleColor: '#fff',
+            bodyColor: '#fff',
+            padding: 10
+          }
+        }
+      }
+    });
+
+    // --- Activity list initial items ---
+    const activityListEl = document.getElementById('activityList');
+    function pushActivity(item) {
+      const el = document.createElement('div');
+      el.style.display='flex';
+      el.style.justifyContent='space-between';
+      el.style.alignItems='center';
+      el.style.padding='10px';
+      el.style.borderRadius='8px';
+      el.style.background='linear-gradient(90deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00))';
+      el.innerHTML = `<div>
+          <div style="font-weight:600">${item.source}</div>
+          <div style="font-size:0.9rem;color:var(--muted)">${item.message}</div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-size:0.9rem;color:var(--muted)">${item.time}</div>
+          <div style="margin-top:6px;font-weight:700;color:${item.level==='high'?'#ff8080':item.level==='medium'?'#ffd080':'#9bffb0'}">${item.level.toUpperCase()}</div>
+        </div>`;
+      activityListEl.prepend(el);
+      // keep max 6 items
+      while (activityListEl.children.length > 6) activityListEl.removeChild(activityListEl.lastChild);
+    }
+
+    // seed few activities
+    pushActivity({time:'02:12', source:'S.O.S. Scanner', message:'Intento de acceso bloqueado', level:'high'});
+    pushActivity({time:'01:50', source:'Monitor AI', message:'Falso positivo analizado', level:'low'});
+    pushActivity({time:'00:40', source:'Firewall', message:'Regla actualizada', level:'medium'});
+
+    // --- Dynamic update loop ---
+    // every INTERVAL ms, generate a new bucket and update chart and activity
+    const INTERVAL = 3000; // 3 seconds
+
+    function shiftAndPushBucket() {
+      // create timestamp label for next bucket (advance 1 hour from last label)
+      const lastLabel = labels[labels.length-1];
+      const now = new Date();
+      // use minutes for live feeling: use current time HH:MM
+      const nextLabel = now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+
+      // generate new random data
+      const attempts = Math.floor(30 + Math.random() * 140);
+      const blocked = Math.floor(attempts * (0.05 + Math.random() * 0.45));
+
+      // push, shift if exceeds max
+      labels.push(nextLabel);
+      attemptsData.push(attempts);
+      blockedData.push(blocked);
+      if (labels.length > MAX_BUCKETS) {
+        labels.shift();
+        attemptsData.shift();
+        blockedData.shift();
+      }
+
+      // update chart data and re-render
+      chart.data.labels = labels.slice();
+      chart.data.datasets[0].data = attemptsData.slice();
+      chart.data.datasets[1].data = blockedData.slice();
+      chart.update();
+
+      // push activity
+      const levels = ['low','medium','high'];
+      const lvl = levels[Math.floor(Math.random()*levels.length)];
+      const messages = {
+        low: ['Escaneo completado', 'Actividad normal detectada', 'Chequeo rutinario'],
+        medium: ['Aumento de intentos detectado', 'Acceso sospechoso', 'Anomalía encontrada'],
+        high: ['Intento de intrusión bloqueado', 'Alerta crítica: IP bloqueada', 'Exploit detectado']
+      };
+      const sources = ['Monitor AI','Firewall','S.O.S. Scanner','WAF'];
+
+      pushActivity({
+        time: nextLabel,
+        source: sources[Math.floor(Math.random()*sources.length)],
+        message: messages[lvl][Math.floor(Math.random()*messages[lvl].length)],
+        level: lvl
+      });
+
+      // update quick stats (example aggregated)
+      const totalAttempts = attemptsData.reduce((s,v)=>s+v,0);
+      const totalBlocked = blockedData.reduce((s,v)=>s+v,0);
+      document.getElementById('statAccess').textContent = totalAttempts.toString();
+      document.getElementById('statAlerts').textContent = Math.max(1, Math.floor(totalBlocked / 10)).toString();
+      document.getElementById('statInc').textContent = Math.max(0, Math.floor(totalBlocked / 40)).toString();
+    }
+
+    // start periodic updates
+    const intervalId = setInterval(shiftAndPushBucket, INTERVAL);
+
+    // Clean up on unload
+    window.addEventListener('beforeunload', () => clearInterval(intervalId));
+  </script>
+</body>
+</html>

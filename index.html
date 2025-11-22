@@ -256,22 +256,53 @@ button:hover {
         </div>
       </div>
     </section>
+   <!-- ================= CODE EXAMPLE SECTION ================= -->
+    <section class="py-24 px-6 text-center bg-black">
+      <h2 class="text-4xl font-extrabold mb-12">
+        Nuestros Colaboradores Más Leales
+      </h2>
+
+      <div
+        -- ================= LOGO MARQUEE ================= -->
+<section class="py-20 bg-black text-center overflow-hidden relative">
+  <h2 class="text-gray-400 uppercase tracking-widest text-sm mb-10">
+    Colaboradores
+  </h2>
+
+  <!-- Contenedor del carrusel -->
+  <!-- ================= CARRUSEL DE LOGOS ================= -->
+<div class="relative w-full overflow-hidden py-8">
+  <div class="flex gap-16 animate-scroll whitespace-nowrap" id="carousel">
+    <!-- Logos -->
+    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="React" />
+    <img src="https://nodejs.org/static/logos/nodejsStackedWhite.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Node.js" />
+    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="AWS" />
+    <img src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-standard.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Firebase" />
+    <img src="github-mark-white.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="GitHub" />
+    <img src="https://img.icons8.com/color/512/google-cloud.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Google Cloud" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="PostgreSQL" />
+
+    <!-- Duplicamos para bucle infinito -->
+    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="React" />
+    <img src="https://nodejs.org/static/logos/nodejsStackedWhite.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Node.js" />
+    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="AWS" />
+    <img src="https://firebase.google.com/static/downloads/brand-guidelines/SVG/logo-standard.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Firebase" />
+    <img src="github-mark-white.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="GitHub" />
+    <img src="https://img.icons8.com/color/512/google-cloud.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Google Cloud" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="PostgreSQL" />
+  </div>
+</div>
 
     <!-- Fuente Stack Sans Text -->
 <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
 
 <section class="ia-security">
-  <!-- ESCUDO PROFESIONAL ANIMADO (2D) -->
-  <div class="lp-SectionIntroWebGL">
-    <canvas class="lp-SectionIntroWebGL-canvas" width="118" height="118"></canvas>
-    <!-- Contorno neon animado -->
-    <svg class="shield-border-svg" viewBox="0 0 100 100">
-      <path class="shield-border" d="M50 2 L90 20 L90 60 L50 98 L10 60 L10 20 Z"/>
-      <polyline class="check" points="30,52 45,68 70,35"/>
-    </svg>
+
+  <div class="icon-container">
+    <img src="escudo-de-seguridad.png" class="icon-floating" alt="icono de seguridad">
   </div>
 
-  <h2>Construido con seguridad con IA</h2>
+  <h2>Implementación de seguridad con IA</h2>
   <p class="subtitle">Utiliza la IA para mejorar tu seguridad y avisarte de alguna brecha.</p>
 
   <div class="content-box">
@@ -285,8 +316,225 @@ button:hover {
       <img src="Construido con seguridad con IA(1).png" alt="Chat del bot TRGLIX AI">
     </div>
   </div>
+
 </section>
 
+<style>
+  /* Importar la fuente Stack Sans Notch desde Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+
+  .ia-security {
+    font-family: 'Stack Sans Notch', sans-serif;
+    text-align: center;
+    padding: 120px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-floating {
+    width: 110px;
+    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
+    opacity: 0;
+    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-14px); }
+    100% { transform: translateY(0px); }
+  }
+  @keyframes glow {
+    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
+    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ia-security h2 {
+    font-size: 2.6rem;
+    margin-top: 25px;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #c9c9c9;
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  .content-box {
+    margin-top: 70px;
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+  }
+
+  .text {
+    width: 50%;
+    text-align: left;
+  }
+  .text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .text p {
+    color: #b4b4b4;
+    line-height: 1.6;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4ea1ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .chat-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .chat-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
+  }
+</style>
+<!-- Fuente Stack Sans Text -->
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
+
+<section class="ia-security">
+
+  <div class="icon-container">
+    <img src="transferir.png" class="icon-floating" alt="icono de seguridad">
+  </div>
+
+  <h2>Colaboración Compartida</h2>
+  <p class="subtitle">Colabora a traves de un link en tu hosting con amigos, familia y más.</p>
+
+  <div class="content-box">
+    <div class="text">
+      <h3>Colaboración por Correo</h3>
+      <p>La función de Colaboración Compartida permite invitar hasta 50 personas a tu hosting para que puedan administrarlo con diferentes rangos, como Ssuario, Subuser, Enterprise y Owner</p>
+      <a href="#" class="link">Explora más →</a>
+    </div>
+
+    <div class="chat-box">
+      <img src="colaboraimg.png" alt="Chat del bot TRGLIX AI">
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* Importar la fuente Stack Sans Notch desde Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+
+  .ia-security {
+    font-family: 'Stack Sans Notch', sans-serif;
+    text-align: center;
+    padding: 120px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-floating {
+    width: 110px;
+    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
+    opacity: 0;
+    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-14px); }
+    100% { transform: translateY(0px); }
+  }
+  @keyframes glow {
+    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
+    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ia-security h2 {
+    font-size: 2.6rem;
+    margin-top: 25px;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #c9c9c9;
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  .content-box {
+    margin-top: 70px;
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+  }
+
+  .text {
+    width: 50%;
+    text-align: left;
+  }
+  .text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .text p {
+    color: #b4b4b4;
+    line-height: 1.6;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4ea1ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .chat-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .chat-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
+  }
+</style>
 <style>
 body {
   background: #0d0f16;
@@ -408,43 +656,7 @@ body {
 </style>
 
 
-    <!-- ================= CODE EXAMPLE SECTION ================= -->
-    <section class="py-24 px-6 text-center bg-black">
-      <h2 class="text-4xl font-extrabold mb-12">
-        Nuestros Colaboradores Más Leales
-      </h2>
-
-      <div
-        -- ================= LOGO MARQUEE ================= -->
-<section class="py-20 bg-black text-center overflow-hidden relative">
-  <h2 class="text-gray-400 uppercase tracking-widest text-sm mb-10">
-    Colaboradores
-  </h2>
-
-  <!-- Contenedor del carrusel -->
-  <!-- ================= CARRUSEL DE LOGOS ================= -->
-<div class="relative w-full overflow-hidden py-8">
-  <div class="flex gap-16 animate-scroll whitespace-nowrap" id="carousel">
-    <!-- Logos -->
-    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="React" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Node.js" />
-    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="AWS" />
-    <img src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Firebase" />
-    <img src="github-mark-white.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="GitHub" />
-    <img src="https://img.icons8.com/color/512/google-cloud.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Google Cloud" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="PostgreSQL" />
-
-    <!-- Duplicamos para bucle infinito -->
-    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="React" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Node.js" />
-    <img src="NEXO FM 1.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="AWS" />
-    <img src="https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-512.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Firebase" />
-    <img src="github-mark-white.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="GitHub" />
-    <img src="https://img.icons8.com/color/512/google-cloud.png" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="Google Cloud" />
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" class="h-16 md:h-20 inline-block transition-transform duration-300 hover:scale-125" alt="PostgreSQL" />
-  </div>
-</div>
-
+ 
 <!-- ================= ESTILOS ================= -->
 <style>
   @keyframes scroll {
