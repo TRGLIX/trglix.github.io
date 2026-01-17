@@ -1,199 +1,539 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login — TRGLIX</title>
-
-  <!-- Fuente Stack Sans Notch -->
-  <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CryptoJS para cifrado -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-
-  <style>
-    :root {
-      --bg: #0a0c10;
-      --card: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.15);
-      --accent1: #4e7bff;
-      --accent2: #7648ff;
-      --text-muted: #c5c5c5;
-    }
-
-    * { margin:0; padding:0; box-sizing:border-box; }
-
-    body {
-      font-family: 'Stack Sans Notch', sans-serif;
-      background: var(--bg);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .card {
-      width: 400px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 35px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .logo-wrap {
-      text-align:center;
-      margin-bottom: 20px;
-    }
-
-    .logo {
-      width: 90px;
-      animation: float 3.5s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
-    }
-
-    h1 {
-      text-align:center;
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      text-align:center;
-      color: var(--text-muted);
-      margin-bottom: 25px;
-      font-size: 0.95rem;
-    }
-
-    label {
-      display:block;
-      margin-bottom: 6px;
-      font-size: 0.95rem;
-    }
-
-    input {
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      color:white;
-      margin-bottom:18px;
-      font-size:1rem;
-    }
-
-    input:focus {
-      outline:none;
-      border-color: var(--accent1);
-    }
-
-    .btn {
-      width:100%;
-      padding:12px;
-      background: linear-gradient(135deg, var(--accent1), var(--accent2));
-      border:none;
-      border-radius:10px;
-      color:white;
-      font-size:1.1rem;
-      font-weight:600;
-      cursor:pointer;
-      transition: 0.15s;
-    }
-
-    .btn:hover {
-      transform: scale(1.02);
-    }
-
-    .msg {
-      margin-top: 15px;
-      height: 20px;
-      text-align:center;
-      font-size:0.95rem;
-      color: #ff8d8d;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUENETWORK - Secure Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<style>:root {
+    --bg-color: #050507;
+    --card-bg: rgba(20, 20, 25, 0.6);
+    --primary: #6366f1;
+    --primary-glow: #818cf8;
+    --accent: #d946ef;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border: rgba(255, 255, 255, 0.08);
+    --input-bg: rgba(255, 255, 255, 0.03);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  <div class="card">
-    <div class="logo-wrap">
-      <img src="/mnt/data/escudo.gif" class="logo" alt="Logo de seguridad">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Background Effects */
+.background-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    pointer-events: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 20s infinite ease-in-out;
+}
+
+.blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: var(--primary);
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: var(--accent);
+    animation-delay: -10s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.95);
+    }
+}
+
+/* Login Container */
+.login-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    margin: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typography & Brand */
+.brand-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, white, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+input {
+    width: 100%;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+input:focus+.input-icon,
+.input-wrapper:focus-within .input-icon {
+    color: var(--primary-glow);
+}
+
+/* Actions */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--input-bg);
+    position: relative;
+    transition: var(--transition);
+}
+
+.checkbox-container input:checked~.checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-container input:checked~.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.forgot-password {
+    color: var(--primary-glow);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.forgot-password:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Buttons */
+.submit-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: linear-gradient(135deg, var(--primary), #4f46e5);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Divider & Social */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border);
+}
+
+.divider span {
+    padding: 0 1rem;
+}
+
+.social-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--text-secondary);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.signup-link a {
+    color: var(--primary-glow);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 2rem 1.5rem;
+        margin: 0;
+        border: none;
+        height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .blob {
+        opacity: 0.6;
+    }
+}                                         
+            </style>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="grid-overlay"></div>
     </div>
 
-    <h1>Iniciar sesión</h1>
-    <p class="subtitle">Accede a tu panel privado</p>
+    <div class="login-container">
+        <div class="brand-section">
+            <div class="logo-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+            <h1>BLUENETWORK</h1>
+            <p class="subtitle">Your Favorite</p>
+        </div>
 
-    <form id="loginForm">
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" required placeholder="usuario@demo.com">
+        <form class="login-form" onsubmit="event.preventDefault()">
+            <div class="input-group">
+                <label for="email">Email address</label>
+                <div class="input-wrapper">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <input type="email" id="email" placeholder="name@company.com" required>
+                </div>
+            </div>
 
-      <label for="password">Contraseña</label>
-      <input type="password" id="password" required placeholder="••••••••">
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path
+                            d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+                    </svg>
+                    <input type="password" id="password" placeholder="••••••••" required>
+                </div>
+            </div>
 
-      <button type="submit" class="btn">Entrar</button>
-      <div id="msg" class="msg"></div>
-    </form>
-  </div>
+            <div class="form-actions">
+                <label class="checkbox-container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                    Remember me
+                </label>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
 
-<script>
-  const SECRET_KEY = "ClaveUltraSegura_TGLX";
+            <button type="submit" class="submit-btn">
+                <span>Sign In</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </button>
 
-  const usersPlain = [
-    { email: "admin@demo.com", password: "123456", name: "Administrador" },
-    { email: "juan@demo.com", password: "abc123", name: "Juan Pérez" },
-    { email: "maria@demo.com", password: "pwd2024", name: "María López" }
- 
-  ];
+            <div class="divider">
+                <span>or continue with</span>
+            </div>
 
-  const encryptedUsers = CryptoJS.AES.encrypt(JSON.stringify(usersPlain), SECRET_KEY).toString();
+            <div class="social-login">
+                <button type="button" class="social-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                            fill="#4285F4" />
+                        <path
+                            d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                            fill="#34A853" />
+                        <path
+                            d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                            fill="#FBBC05" />
+                        <path
+                            d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                            fill="#EA4335" />
+                    </svg>
+                    Google
+                </button>
+                <button type="button" class="social-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.05-.015-2.055-3.33.72-4.035-1.605-4.035-1.605-.54-1.38-1.335-1.755-1.335-1.755-1.085-.735.09-.72.09-.72 1.2.075 1.83 1.23 1.83 1.23 1.065 1.815 2.805 1.29 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405 1.02 0 2.04.135 3 .405 2.28-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.285 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                </button>
+            </div>
 
-  const msg = document.getElementById("msg");
+            <p class="signup-link">
+                Don't have an account? <a href="#">Request access</a>
+            </p>
+        </form>
+    </div>
+</body>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-  document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    msg.textContent = "";
+const firebaseConfig = {
+  apiKey: "AIzaSyDzoA4wgJ5V3AQATMtCPXc2Pw7B6G-cDaY",
+  authDomain: "login-mcbluenetwork.firebaseapp.com",
+  projectId: "login-mcbluenetwork",
+};
 
-    const email = document.getElementById("email").value.trim();
-    const pass  = document.getElementById("password").value;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    try {
-      const bytes = CryptoJS.AES.decrypt(encryptedUsers, SECRET_KEY);
-      const users = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+/* LOGIN EMAIL/PASSWORD */
+document.querySelector(".login-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-      const user = users.find(u => u.email === email && u.password === pass);
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
-      if (!user) {
-        msg.textContent = "Credenciales incorrectas.";
-        return;
-      }
+  try {
+    const user = await signInWithEmailAndPassword(auth, email, password);
+    alert("Bienvenido " + user.user.email);
+    // window.location.href = "dashboard.html";
+  } catch (err) {
+    alert("Error: " + err.message);
+  }
+});
 
-      localStorage.setItem("trglix_user", JSON.stringify(user));
+/* LOGIN GOOGLE */
+document.querySelector(".social-btn").addEventListener("click", async () => {
+  try {
+    const provider = new GoogleAuthProvider();
+    const result = await signInWithPopup(auth, provider);
+    alert("Bienvenido " + result.user.email);
+  } catch (err) {
+    alert("Error Google: " + err.message);
+  }
+});
 
-      msg.style.color = "#9bffb0";
-      msg.textContent = "Acceso correcto...";
-
-      setTimeout(() => {
-        location.href = "dashboard.html";
-      }, 800);
-
-    } catch (err) {
-      msg.textContent = "Error interno.";
-    }
-  });
 </script>
 
-</body>
-</html>
+</html>            
