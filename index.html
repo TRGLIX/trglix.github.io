@@ -1,10 +1,675 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="refresh" content="0; url=https://trglix.loca.lt">
-</head>
-<body>
-  <p>Redirigiendo...</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TRGLIX STUDIOS</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
+     crossorigin="anonymous"></script>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles -->
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #000;
+        color: white;
+        overflow-x: hidden;
+      }
+      .gradient-bottom {
+        background: linear-gradient(to top, #d83b00 0%, transparent 70%);
+        filter: blur(5px);
+      }
+      .floating {
+        animation: float 8s ease-in-out infinite alternate;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-30px); }
+      }
+      .gradient-bg {
+        background: radial-gradient(
+          600px circle at 50% 100%,
+          rgba(255, 60, 0, 0.3),
+          transparent 70%
+        ),
+        radial-gradient(
+          400px circle at 80% 20%,
+          rgba(0, 140, 255, 0.2),
+          transparent 80%
+        ),
+        radial-gradient(
+          500px circle at 20% 40%,
+          rgba(255, 153, 0, 0.1),
+          transparent 80%
+        );
+        filter: blur(100px);
+      }
+      /* From Uiverse.io by felipesntr */ 
+      /* From Uiverse.io by Spacious74 */ 
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.outer-cont {
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
+  border-radius: 12px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow:
+    inset 0px 0px 5px #ffffffa9,
+    inset 0px 35px 30px #000,
+    0px 5px 10px #000000cc;
+  text-shadow: 1px 1px 1px #000;
+}
+.outer-cont::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 12px;
+  filter: blur(0);
+  z-index: -1;
+  box-shadow: none;
+  background: conic-gradient(
+    #00000000 80deg,
+    #40baf7,
+    #f34ad7,
+    #5bfcc4,
+    #00000000 280deg
+  );
+  transition: all 0.3s ease;
+}
+.outer-cont:hover::before {
+  filter: blur(15px);
+}
+.outer-cont:active::before {
+  filter: blur(5px);
+  transform: translateY(1px);
+}
+.outer-cont:active {
+  box-shadow:
+    inset 0px 0px 5px #ffffffa9,
+    inset 0px 35px 30px #000;
+  margin-top: 3px;
+}
+
+
+
+button:hover {
+  transform: translate(5px, -5px);
+}
+    </style>
+  </head>
+
+  <body class="relative overflow-x-hidden">
+    <!-- Background gradients -->
+    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
+    <div class="gradient-bottom absolute bottom-0 left-0 w-full h-64 -z-10"></div>
+
+    <!-- ================= HEADER / NAVBAR ================= -->
+    <header
+      class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50"
+    >
+      <div class="flex items-center gap-2 text-lg font-bold">
+        TRS <span>MCBLUENETWORK</span>
+      </div>
+      <nav class="flex items-center gap-8">
+        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
+        <a href="shop.html" class="text-gray-400 hover:text-white transition">Tienda</a>
+       
+        <a href="AIDOCU.html" class="text-gray-400 hover:text-white transition">Implementación IA</a>
+        <a href="support.html" class="text-gray-400 hover:text-white transition">Soporte</a>
+        <!-- From Uiverse.io by felipesntr --> 
+<!-- From Uiverse.io by Spacious74 --> 
+<div class="outer-cont flex">
+  <svg
+    viewBox="0 0 24 24"
+    height="24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g fill="none">
+      <path
+        d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
+      ></path>
+      <path
+        d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2"
+        fill="currentColor"
+      ></path>
+    </g>
+  </svg>
+  LOGIN
+</div>
+
+      </nav>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+     
+    <section
+      class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32"
+    >
+      <h1
+        class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight"
+      >
+        Tu Network 
+        
+        a nada <br />
+        de tí.
+      </h1>
+
+      <p class="mt-6 text-gray-400 text-lg max-w-2xl leading-relaxed">
+        Administra tu hosting con IA, administra tus websites.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+        
+        <button
+          class="bg-orange-500 hover:bg-orange-400 text-black font-bold text-lg px-8 py-3 rounded-full transition transform hover:scale-105 shadow-lg"
+        >
+          <a href="https://trglix.github.io/nexoplay/">Gestionar Ahora</a>
+        </button>
+        <button
+          class="border border-gray-700 hover:border-gray-500 text-gray-300 font-semibold px-8 py-3 rounded-full transition"
+        ><a href="hostinc.html">Más Información</a>
+          
+        </button>
+      </div>
+    </section>
+
+    <!-- ================= FEATURES SECTION ================= -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
+     crossorigin="anonymous"></script>
+<!-- INTADS -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6838243658328521"
+     data-ad-slot="4417822383"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+    <section
+      class="py-24 px-6 bg-gradient-to-b from-black via-neutral-900 to-black text-center"
+    >
+      <h2 class="text-4xl font-extrabold mb-12">
+        Todo lo que necisitas en un solo lugar
+      </h2>
+
+      <div
+        class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-left mt-10"
+      >
+        <!-- Feature 1 -->
+        <div
+          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
+        >
+          <div
+            class="text-orange-400 text-3xl mb-4 font-bold select-none"
+          >📺</div>
+          <h3 class="text-2xl font-semibold mb-3">Hosting</h3>
+          <p class="text-gray-400">
+            Hosting 24/7 para que puedas administralo apagarlo y más cosas.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
+        >
+          <div
+            class="text-lime-400 text-3xl mb-4 font-bold select-none"
+          >🤖</div>
+          <h3 class="text-2xl font-semibold mb-3">IA</h3>
+          <p class="text-gray-400">
+            Add autonomous AI agents to your workflow to generate code, test
+            features, and optimize builds automatically.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
+        >
+          <div>
+            <h3 class="text-2xl font-semibold mb-3">Incidentes en Tiempo
+              Real
+            </h3>
+             <p class="text-gray-400">
+           Los incidentes que surgen, para que sepas que ha pasado, y no te preocupes por que tengas tu la culpa
+          </p>
+          
+        </div>
+      </div>
+    </section>
+   <!-- ================= CODE EXAMPLE SECTION ================= -->
+    <section class="py-24 px-6 text-center bg-black">
+      <h2 class="text-4xl font-extrabold mb-12">
+        Más Cosas Próximamente
+      </h2>
+
+      <section>
+ 
+<style>
+  /* Importar la fuente Stack Sans Notch desde Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+
+  .ia-security {
+    font-family: 'Stack Sans Notch', sans-serif;
+    text-align: center;
+    padding: 120px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-floating {
+    width: 110px;
+    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
+    opacity: 0;
+    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-14px); }
+    100% { transform: translateY(0px); }
+  }
+  @keyframes glow {
+    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
+    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ia-security h2 {
+    font-size: 2.6rem;
+    margin-top: 25px;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #c9c9c9;
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  .content-box {
+    margin-top: 70px;
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+  }
+
+  .text {
+    width: 50%;
+    text-align: left;
+  }
+  .text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .text p {
+    color: #b4b4b4;
+    line-height: 1.6;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4ea1ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .chat-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .chat-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
+  }
+</style>
+<!-- Fuente Stack Sans Text -->
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Importar la fuente Stack Sans Notch desde Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+
+  .ia-security {
+    font-family: 'Stack Sans Notch', sans-serif;
+    text-align: center;
+    padding: 120px 20px;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+  }
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .icon-floating {
+    width: 110px;
+    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
+    opacity: 0;
+    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-14px); }
+    100% { transform: translateY(0px); }
+  }
+  @keyframes glow {
+    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
+    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
+  }
+  @keyframes fadein {
+    from { opacity: 0; transform: scale(0.85); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ia-security h2 {
+    font-size: 2.6rem;
+    margin-top: 25px;
+    font-weight: 700;
+  }
+  .subtitle {
+    color: #c9c9c9;
+    margin-top: 10px;
+    font-size: 1.1rem;
+  }
+
+  .content-box {
+    margin-top: 70px;
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(10px);
+  }
+
+  .text {
+    width: 50%;
+    text-align: left;
+  }
+  .text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  .text p {
+    color: #b4b4b4;
+    line-height: 1.6;
+  }
+  .link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4ea1ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .chat-box {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  .chat-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
+  }
+</style>
+<style>
+body {
+  background: #0d0f16;
+  font-family: 'Stack Sans Text', sans-serif;
+  margin: 0;
+  color: white;
+}
+
+.ia-security {
+  text-align: center;
+  padding: 100px 0;
+}
+
+.lp-SectionIntroWebGL {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 20px;
+  position: relative;
+}
+
+.lp-SectionIntroWebGL-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* SVG contorno neon */
+.shield-border-svg {
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.shield-border {
+  fill: none;
+  stroke: #4da3ff;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  filter: drop-shadow(0 0 8px #4da3ff);
+  animation: drawBorder 1.5s forwards;
+}
+.check {
+  fill: none;
+  stroke: #4da3ff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  filter: drop-shadow(0 0 8px #4da3ff);
+  animation: drawCheck 1s forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes drawBorder {
+  0% { stroke-dashoffset: 320; opacity:1; }
+  80% { stroke-dashoffset:0; opacity:1; }
+  100% { stroke-dashoffset:0; opacity:0.4; }
+}
+
+@keyframes drawCheck {
+  0% { stroke-dashoffset:60; opacity:0; }
+  50% { opacity:1; }
+  100% { stroke-dashoffset:0; opacity:1; }
+}
+
+/* Texto y subtítulos */
+.ia-security h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.subtitle {
+  margin-top:10px;
+  opacity:0.7;
+  font-size:18px;
+}
+
+/* Contenedor principal */
+.content-box {
+  margin: 80px auto 0;
+  width: 90%;
+  max-width: 1100px;
+  padding:50px;
+  border-radius:20px;
+  background: linear-gradient(180deg, rgba(130,60,255,0.2), rgba(20,20,30,0.5));
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;
+  gap:50px;
+  justify-content:space-between;
+}
+.text {
+  width:45%;
+  text-align:left;
+}
+.text h3 {
+  font-size:28px;
+  margin-bottom:10px;
+}
+.link {
+  margin-top:20px;
+  display:inline-block;
+  color:#4da3ff;
+}
+.chat-box {
+  width:55%;
+  border-radius:20px;
+  overflow:hidden;
+}
+.chat-box img {
+  width:100%;
+  display:block;
+  border-radius:20px;
+  border: 2px solid rgba(255, 255, 255, 0.5); /* Contorno blanco 50% */
+  box-sizing: border-box;
+}
+</style>
+
+
+ 
+<!-- ================= ESTILOS ================= -->
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    display: flex;
+    animation: scroll 30s linear infinite;
+  }
+
+  /* Pausar animación al hacer hover */
+  #carousel:hover {
+    animation-play-state: paused;
+  }
+</style>
+
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .animate-scroll {
+      animation: scroll 25s linear infinite;
+    }
+  </style>
+</section>
+
+        
+        
+        <pre
+          class="text-lime-400 font-mono text-sm overflow-x-auto whitespace-pre"
+        ><code>
+
+        </code></pre>
+      </div>
+    </section>
+
+    <!-- Contenedor del carrusel -->
+
+  <style>
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    .animate-scroll {
+      animation: scroll 25s linear infinite;
+    }
+  </style>
+
+
+    <!-- ================= AI AGENTS SECTION ================= -->
+   
+
+    <!-- ================= CTA SECTION ================= -->
+    <section
+      class="py-28 px-6 text-center bg-gradient-to-t from-orange-500/10 via-black to-black"
+    >
+      <h2 class="text-5xl font-extrabold mb-8">
+        TRGLIX INC <span class="text-orange-400">Desde el 2020</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+        Con Expericiencia desde el 2020.
+      </p>
+      <button
+        class="bg-orange-500 hover:bg-orange-400 text-black font-bold text-lg px-10 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
+      >
+        Más Información
+      </button>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer
+      class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black"
+    >
+      <p>&copy; TRGLIX INC. All rights reserved.</p>
+      <div class="flex gap-6 mt-4 md:mt-0">
+        <a href="#" class="hover:text-white">Privacy</a>
+        <a href="#" class="hover:text-white">Terms</a>
+        <a href="#" class="hover:text-white">Status</a>
+      </div>
+    </footer>
+  </body>
 </html>
 
