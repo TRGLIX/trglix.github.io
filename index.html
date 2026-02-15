@@ -1,675 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRGLIX STUDIOS</title>
-
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
-     crossorigin="anonymous"></script>
-
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Custom styles -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TRS INFORTAINMENT | GEN 3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #000;
-        color: white;
-        overflow-x: hidden;
-      }
-      .gradient-bottom {
-        background: linear-gradient(to top, #d83b00 0%, transparent 70%);
-        filter: blur(5px);
-      }
-      .floating {
-        animation: float 8s ease-in-out infinite alternate;
-      }
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        100% { transform: translateY(-30px); }
-      }
-      .gradient-bg {
-        background: radial-gradient(
-          600px circle at 50% 100%,
-          rgba(255, 60, 0, 0.3),
-          transparent 70%
-        ),
-        radial-gradient(
-          400px circle at 80% 20%,
-          rgba(0, 140, 255, 0.2),
-          transparent 80%
-        ),
-        radial-gradient(
-          500px circle at 20% 40%,
-          rgba(255, 153, 0, 0.1),
-          transparent 80%
-        );
-        filter: blur(100px);
-      }
-      /* From Uiverse.io by felipesntr */ 
-      /* From Uiverse.io by Spacious74 */ 
-.flex {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-.outer-cont {
-  padding: 12px 20px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  position: relative;
-  background: linear-gradient(90deg, #5bfcc4, #f593e4, #71a4f0);
-  border-radius: 12px;
-  color: #fff;
-  transition: all 0.3s ease;
-  box-shadow:
-    inset 0px 0px 5px #ffffffa9,
-    inset 0px 35px 30px #000,
-    0px 5px 10px #000000cc;
-  text-shadow: 1px 1px 1px #000;
-}
-.outer-cont::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 12px;
-  filter: blur(0);
-  z-index: -1;
-  box-shadow: none;
-  background: conic-gradient(
-    #00000000 80deg,
-    #40baf7,
-    #f34ad7,
-    #5bfcc4,
-    #00000000 280deg
-  );
-  transition: all 0.3s ease;
-}
-.outer-cont:hover::before {
-  filter: blur(15px);
-}
-.outer-cont:active::before {
-  filter: blur(5px);
-  transform: translateY(1px);
-}
-.outer-cont:active {
-  box-shadow:
-    inset 0px 0px 5px #ffffffa9,
-    inset 0px 35px 30px #000;
-  margin-top: 3px;
-}
+        :root {
+            --accent: #ff3b30;
+            --bg: #030303;
+            --bright: 100%;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body { 
+            background: var(--bg); color: white; 
+            font-family: 'Space Grotesk', sans-serif; /* Cambio de fuente base */
+            width: 100vw; height: 100vh; overflow: hidden; filter: brightness(var(--bright));
+        }
 
+        /* FONDO DINÁMICO REJILLA 3D */
+        .grid-bg {
+            position: fixed; inset: 0; z-index: -1;
+            background-image: 
+                linear-gradient(rgba(255,59,48,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,59,48,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            perspective: 500px;
+            transform: rotateX(60deg) scale(2);
+            transform-origin: top;
+            opacity: 0.3;
+        }
 
-button:hover {
-  transform: translate(5px, -5px);
-}
+        /* HEADER CON TELEMETRÍA */
+        header {
+            height: 80px; display: flex; justify-content: space-between; align-items: center;
+            padding: 0 40px; background: rgba(0,0,0,0.9);
+            border-bottom: 2px solid var(--accent); position: relative; z-index: 2000;
+        }
+        .brand { 
+            font-family: 'Space Grotesk', sans-serif; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            font-size: 1.8rem; 
+            letter-spacing: -1px; 
+        }
+        .brand span { color: var(--accent); text-shadow: 0 0 10px var(--accent); font-weight: 300; }
+
+        /* ANALIZADOR DE ESPECTRO SIMULADO */
+        .v-meter { display: flex; gap: 3px; align-items: flex-end; height: 30px; }
+        .v-bar { width: 4px; background: var(--accent); animation: pulse 0.5s infinite alternate; }
+        @keyframes pulse { from { height: 5px; } to { height: 25px; } }
+
+        /* CONTENEDOR DE EMISORAS */
+        .main-engine {
+            height: calc(100% - 170px); 
+            display: flex; align-items: center;
+            overflow-x: auto; padding: 0 60px; gap: 40px;
+            scroll-snap-type: x mandatory;
+        }
+        .main-engine::-webkit-scrollbar { display: none; }
+
+        .radio-card {
+            min-width: 280px; height: 380px; background: #0a0a0a;
+            border: 1px solid #1a1a1a; position: relative;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            scroll-snap-align: center; transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            clip-path: polygon(20px 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%, 0 20px);
+            flex-shrink: 0;
+        }
+
+        .radio-card::before {
+            content: ""; position: absolute; top:0; left:0; width: 100%; height: 5px; background: #222;
+        }
+
+        .radio-card.active { 
+            transform: scale(1.1) translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 0 40px rgba(255, 59, 48, 0.2);
+        }
+        .radio-card.active::before { background: var(--accent); box-shadow: 0 0 15px var(--accent); }
+
+        .radio-card img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 30px; filter: grayscale(1); transition: 0.4s; }
+        .radio-card.active img { filter: grayscale(0); transform: rotate(-5deg); }
+        
+        .radio-card p { font-weight: 700; font-size: 1.2rem; color: #444; text-transform: uppercase; }
+        .radio-card.active p { color: #fff; letter-spacing: 2px; }
+
+        /* SETUP PANEL DROP-DOWN */
+        #setup-panel {
+            position: fixed; top: 80px; left: 0; width: 100%;
+            height: 300px; background: rgba(0,0,0,0.98);
+            z-index: 1500; transform: translateY(-110%);
+            transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            padding: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+            pointer-events: none; border-bottom: 2px solid var(--accent);
+        }
+        #setup-panel.open { transform: translateY(0); pointer-events: auto; }
+
+        .control-item label { display: block; font-size: 0.7rem; color: #888; margin-bottom: 20px; letter-spacing: 3px; font-weight: 700; }
+        input[type="range"] { -webkit-appearance: none; width: 100%; height: 4px; background: #333; }
+        input[type="range"]::-webkit-slider-thumb { 
+            -webkit-appearance: none; width: 20px; height: 40px; background: var(--accent); cursor: pointer;
+            clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+        }
+
+        /* DOCK */
+        .dock {
+            height: 90px; width: 100%; background: #000;
+            display: flex; justify-content: center; align-items: center; gap: 40px;
+            border-top: 1px solid #222; position: fixed; bottom: 0; z-index: 2000;
+        }
+        .nav-btn { 
+            width: 100px; height: 50px; background: #0a0a0a; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%); transition: 0.3s;
+            border: 1px solid #1a1a1a;
+        }
+        .nav-btn.active { background: var(--accent); transform: skew(-10deg); }
+        .nav-btn img { width: 24px; filter: invert(1); }
+
+        #clock { font-weight: 700; font-size: 1.2rem; letter-spacing: 1px; }
+
     </style>
-  </head>
+</head>
+<body>
 
-  <body class="relative overflow-x-hidden">
-    <!-- Background gradients -->
-    <div class="gradient-bg absolute inset-0 -z-10 floating"></div>
-    <div class="gradient-bottom absolute bottom-0 left-0 w-full h-64 -z-10"></div>
+    <div class="grid-bg"></div>
 
-    <!-- ================= HEADER / NAVBAR ================= -->
-    <header
-      class="fixed top-0 w-full flex justify-between items-center px-10 py-5 bg-black/30 backdrop-blur-md border-b border-white/10 z-50"
-    >
-      <div class="flex items-center gap-2 text-lg font-bold">
-        TRS <span>MCBLUENETWORK</span>
-      </div>
-      <nav class="flex items-center gap-8">
-        <a href="index.html" class="text-gray-400 hover:text-white transition">Inicio</a>
-        <a href="shop.html" class="text-gray-400 hover:text-white transition">Tienda</a>
-       
-        <a href="AIDOCU.html" class="text-gray-400 hover:text-white transition">Implementación IA</a>
-        <a href="support.html" class="text-gray-400 hover:text-white transition">Soporte</a>
-        <!-- From Uiverse.io by felipesntr --> 
-<!-- From Uiverse.io by Spacious74 --> 
-<div class="outer-cont flex">
-  <svg
-    viewBox="0 0 24 24"
-    height="24"
-    width="24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g fill="none">
-      <path
-        d="m12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.019-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"
-      ></path>
-      <path
-        d="M9.107 5.448c.598-1.75 3.016-1.803 3.725-.159l.06.16l.807 2.36a4 4 0 0 0 2.276 2.411l.217.081l2.36.806c1.75.598 1.803 3.016.16 3.725l-.16.06l-2.36.807a4 4 0 0 0-2.412 2.276l-.081.216l-.806 2.361c-.598 1.75-3.016 1.803-3.724.16l-.062-.16l-.806-2.36a4 4 0 0 0-2.276-2.412l-.216-.081l-2.36-.806c-1.751-.598-1.804-3.016-.16-3.724l.16-.062l2.36-.806A4 4 0 0 0 8.22 8.025l.081-.216zM11 6.094l-.806 2.36a6 6 0 0 1-3.49 3.649l-.25.091l-2.36.806l2.36.806a6 6 0 0 1 3.649 3.49l.091.25l.806 2.36l.806-2.36a6 6 0 0 1 3.49-3.649l.25-.09l2.36-.807l-2.36-.806a6 6 0 0 1-3.649-3.49l-.09-.25zM19 2a1 1 0 0 1 .898.56l.048.117l.35 1.026l1.027.35a1 1 0 0 1 .118 1.845l-.118.048l-1.026.35l-.35 1.027a1 1 0 0 1-1.845.117l-.048-.117l-.35-1.026l-1.027-.35a1 1 0 0 1-.118-1.845l.118-.048l1.026-.35l.35-1.027A1 1 0 0 1 19 2"
-        fill="currentColor"
-      ></path>
-    </g>
-  </svg>
-  LOGIN
-</div>
-
-      </nav>
+    <header>
+        <div class="brand">TRS <span>INFORTAINMENT</span></div>
+        <div class="v-meter">
+            <div class="v-bar" style="animation-delay: 0.1s"></div>
+            <div class="v-bar" style="animation-delay: 0.3s"></div>
+            <div class="v-bar" style="animation-delay: 0.2s"></div>
+            <div class="v-bar" style="animation-delay: 0.5s"></div>
+            <div class="v-bar" style="animation-delay: 0.4s"></div>
+        </div>
+        <div id="clock">00:00</div>
     </header>
 
-    <!-- ================= HERO SECTION ================= -->
-     
-    <section
-      class="flex flex-col justify-center items-center text-center min-h-screen px-6 pt-32"
-    >
-      <h1
-        class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight"
-      >
-        Tu Network 
-        
-        a nada <br />
-        de tí.
-      </h1>
-
-      <p class="mt-6 text-gray-400 text-lg max-w-2xl leading-relaxed">
-        Administra tu hosting con IA, administra tus websites.
-      </p>
-
-      <div class="mt-10 flex flex-col sm:flex-row gap-4">
-        
-        <button
-          class="bg-orange-500 hover:bg-orange-400 text-black font-bold text-lg px-8 py-3 rounded-full transition transform hover:scale-105 shadow-lg"
-        >
-          <a href="https://trglix.github.io/nexoplay/">Gestionar Ahora</a>
-        </button>
-        <button
-          class="border border-gray-700 hover:border-gray-500 text-gray-300 font-semibold px-8 py-3 rounded-full transition"
-        ><a href="hostinc.html">Más Información</a>
-          
-        </button>
-      </div>
-    </section>
-
-    <!-- ================= FEATURES SECTION ================= -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6838243658328521"
-     crossorigin="anonymous"></script>
-<!-- INTADS -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6838243658328521"
-     data-ad-slot="4417822383"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    <section
-      class="py-24 px-6 bg-gradient-to-b from-black via-neutral-900 to-black text-center"
-    >
-      <h2 class="text-4xl font-extrabold mb-12">
-        Todo lo que necisitas en un solo lugar
-      </h2>
-
-      <div
-        class="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-left mt-10"
-      >
-        <!-- Feature 1 -->
-        <div
-          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
-        >
-          <div
-            class="text-orange-400 text-3xl mb-4 font-bold select-none"
-          >📺</div>
-          <h3 class="text-2xl font-semibold mb-3">Hosting</h3>
-          <p class="text-gray-400">
-            Hosting 24/7 para que puedas administralo apagarlo y más cosas.
-          </p>
+    <div class="main-engine" id="engine">
+        <div class="radio-card" onclick="play(this, 'https://27903.live.streamtheworld.com/LOS40_SANTANDER.mp3', '#ff3b30')">
+            <img src="https://station-images-prod.radio-assets.com/2160/los40.png"><p>LOS 40</p>
         </div>
-
-        <!-- Feature 2 -->
-        <div
-          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
-        >
-          <div
-            class="text-lime-400 text-3xl mb-4 font-bold select-none"
-          >🤖</div>
-          <h3 class="text-2xl font-semibold mb-3">IA</h3>
-          <p class="text-gray-400">
-            Add autonomous AI agents to your workflow to generate code, test
-            features, and optimize builds automatically.
-          </p>
+        <div class="radio-card" onclick="play(this, 'https://stream.zeno.fm/se76qau1hc9uv', '#00f2ff')">
+            <img src="https://static-2.ivoox.com/radios/5/3/1/1/3131724191135_XL.jpg"><p>EUROPA FM</p>
         </div>
-
-        <!-- Feature 3 -->
-        <div
-          class="p-8 bg-neutral-900/60 border border-neutral-800 rounded-2xl hover:border-orange-500 transition"
-        >
-          <div>
-            <h3 class="text-2xl font-semibold mb-3">Incidentes en Tiempo
-              Real
-            </h3>
-             <p class="text-gray-400">
-           Los incidentes que surgen, para que sepas que ha pasado, y no te preocupes por que tengas tu la culpa
-          </p>
-          
+        <div class="radio-card" onclick="play(this, 'https://rockfm-cope-rrcast.flumotion.com/cope/rockfm.mp3', '#ffcc00')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/RockFM_Logo.svg"><p>ROCK FM</p>
         </div>
-      </div>
-    </section>
-   <!-- ================= CODE EXAMPLE SECTION ================= -->
-    <section class="py-24 px-6 text-center bg-black">
-      <h2 class="text-4xl font-extrabold mb-12">
-        Más Cosas Próximamente
-      </h2>
+        <div class="radio-card" onclick="play(this, 'https://playerservices.streamtheworld.com/api/livestream-redirect/SER_ASO_MADRID_NORTE.mp3', '#ff9500')">
+            <img src="https://images.seeklogo.com/logo-png/49/1/cadena-ser-logo-png_seeklogo-490315.png"><p>CADENA SER</p>
+        </div>
+        <div class="radio-card" onclick="play(this, 'https://madrid-cope-rrcast.flumotion.com/cope/madrid.mp3', '#007aff')">
+            <img src="https://cdn.worldvectorlogo.com/logos/cope.svg"><p>COPE</p>
+        </div>
+        <div class="radio-card" onclick="play(this, 'https://stream.zeno.fm/dzqaazsn3p8uv', '#32d74b')">
+            <img src="https://www.consejodietistasnutricionistas.com/wp-content/uploads/2024/11/ondacero.jpg"><p>ONDA CERO</p>
+        </div>
+        <div class="radio-card" onclick="play(this, 'http://streaming.indalteco.net:8002/dial.mp3', '#34c759')">
+            <img src="https://i.scdn.co/image/ab6775700000ee85d1a77d44bcc0045017d8b442"><p>CADENA DIAL</p>
+        </div>
+        <div class="radio-card" onclick="play(this, 'https://cadena100-streamers-mp3.flumotion.com/cope/cadena100.mp3', '#ff2d55')">
+            <img src="https://www.brandstocker.com/wp-content/uploads/2024/11/CADENA_100_Branding_BrandStocker_06.jpg"><p>CADENA 100</p>
+        </div>
+        <div class="radio-card" onclick="play(this, 'https://kissfm.kissfmradio.cires21.com/kissfm.mp3', '#e60000')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Logo_KISS_FM_2023.jpg"><p>KISS FM</p>
+        </div>
+    </div>
 
-      <section>
- 
-<style>
-  /* Importar la fuente Stack Sans Notch desde Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
+    <div id="setup-panel">
+        <div class="control-item">
+            <label>AUDIO_GAIN_LEVEL</label>
+            <input type="range" min="0" max="1" step="0.01" value="0.5" oninput="player.volume = this.value">
+        </div>
+        <div class="control-item">
+            <label>HUD_BRIGHTNESS</label>
+            <input type="range" min="30" max="100" value="100" oninput="setBright(this.value)">
+        </div>
+        <div style="grid-column: span 2; text-align: center; font-weight: 700; color: var(--accent); cursor: pointer; letter-spacing: 2px;" onclick="toggleSetup(false)">
+            [ CLOSE_SYSTEM_KERNEL ]
+        </div>
+    </div>
 
-  .ia-security {
-    font-family: 'Stack Sans Notch', sans-serif;
-    text-align: center;
-    padding: 120px 20px;
-    max-width: 1200px;
-    margin: auto;
-    color: white;
-  }
+    <div class="dock">
+        <div class="nav-btn active" id="btn-rad" onclick="toggleSetup(false)">
+            <img src="https://cdn-icons-png.flaticon.com/512/727/727218.png">
+        </div>
+        <div class="nav-btn" id="btn-set" onclick="toggleSetup(true)">
+            <img src="https://cdn-icons-png.flaticon.com/512/2040/2040504.png">
+        </div>
+    </div>
 
-  .icon-container {
-    display: flex;
-    justify-content: center;
-  }
+    <audio id="player"></audio>
 
-  .icon-floating {
-    width: 110px;
-    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
-    opacity: 0;
-    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
-  }
+    <script>
+        const player = document.getElementById('player');
+        const setup = document.getElementById('setup-panel');
 
-  @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-14px); }
-    100% { transform: translateY(0px); }
-  }
-  @keyframes glow {
-    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
-    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-  }
-  @keyframes fadein {
-    from { opacity: 0; transform: scale(0.85); }
-    to   { opacity: 1; transform: scale(1); }
-  }
+        function play(el, url, color) {
+            const isActive = el.classList.contains('active');
+            document.querySelectorAll('.radio-card').forEach(c => c.classList.remove('active'));
 
-  .ia-security h2 {
-    font-size: 2.6rem;
-    margin-top: 25px;
-    font-weight: 700;
-  }
-  .subtitle {
-    color: #c9c9c9;
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
+            if(isActive) {
+                player.pause();
+                document.documentElement.style.setProperty('--accent', '#ff3b30');
+            } else {
+                el.classList.add('active');
+                document.documentElement.style.setProperty('--accent', color);
+                player.src = url;
+                player.play();
+                el.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            }
+        }
 
-  .content-box {
-    margin-top: 70px;
-    padding: 50px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(10px);
-  }
+        function toggleSetup(open) {
+            if(open) {
+                setup.classList.add('open');
+                document.getElementById('btn-set').classList.add('active');
+                document.getElementById('btn-rad').classList.remove('active');
+            } else {
+                setup.classList.remove('open');
+                document.getElementById('btn-set').classList.remove('active');
+                document.getElementById('btn-rad').classList.add('active');
+            }
+        }
 
-  .text {
-    width: 50%;
-    text-align: left;
-  }
-  .text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  .text p {
-    color: #b4b4b4;
-    line-height: 1.6;
-  }
-  .link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4ea1ff;
-    text-decoration: none;
-    font-weight: 500;
-  }
+        function setBright(v) { document.documentElement.style.setProperty('--bright', v + '%'); }
 
-  .chat-box {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  .chat-box img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
-  }
-</style>
-<!-- Fuente Stack Sans Text -->
-<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  /* Importar la fuente Stack Sans Notch desde Google Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400;700&display=swap');
-
-  .ia-security {
-    font-family: 'Stack Sans Notch', sans-serif;
-    text-align: center;
-    padding: 120px 20px;
-    max-width: 1200px;
-    margin: auto;
-    color: white;
-  }
-
-  .icon-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .icon-floating {
-    width: 110px;
-    animation: float 3.5s ease-in-out infinite, glow 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 12px rgba(80,120,255,0.6));
-    opacity: 0;
-    animation: fadein 1.5s ease forwards, float 4.5s ease-in-out infinite 1.5s;
-  }
-
-  @keyframes float {
-    0%   { transform: translateY(0px); }
-    50%  { transform: translateY(-14px); }
-    100% { transform: translateY(0px); }
-  }
-  @keyframes glow {
-    0%   { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-    50%  { filter: drop-shadow(0 0 22px rgba(120,150,255,0.9)); }
-    100% { filter: drop-shadow(0 0 10px rgba(80,120,255,0.5)); }
-  }
-  @keyframes fadein {
-    from { opacity: 0; transform: scale(0.85); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-
-  .ia-security h2 {
-    font-size: 2.6rem;
-    margin-top: 25px;
-    font-weight: 700;
-  }
-  .subtitle {
-    color: #c9c9c9;
-    margin-top: 10px;
-    font-size: 1.1rem;
-  }
-
-  .content-box {
-    margin-top: 70px;
-    padding: 50px;
-    border-radius: 25px;
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.09);
-    backdrop-filter: blur(10px);
-  }
-
-  .text {
-    width: 50%;
-    text-align: left;
-  }
-  .text h3 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-  }
-  .text p {
-    color: #b4b4b4;
-    line-height: 1.6;
-  }
-  .link {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4ea1ff;
-    text-decoration: none;
-    font-weight: 500;
-  }
-
-  .chat-box {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-  }
-  .chat-box img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 0px 0px 40px rgba(0, 0, 255, 0.3);
-  }
-</style>
-<style>
-body {
-  background: #0d0f16;
-  font-family: 'Stack Sans Text', sans-serif;
-  margin: 0;
-  color: white;
-}
-
-.ia-security {
-  text-align: center;
-  padding: 100px 0;
-}
-
-.lp-SectionIntroWebGL {
-  width: 95px;
-  height: 95px;
-  margin: 0 auto 20px;
-  position: relative;
-}
-
-.lp-SectionIntroWebGL-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/* SVG contorno neon */
-.shield-border-svg {
-  position: absolute;
-  top:0; left:0;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-.shield-border {
-  fill: none;
-  stroke: #4da3ff;
-  stroke-width: 3;
-  stroke-linejoin: round;
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  filter: drop-shadow(0 0 8px #4da3ff);
-  animation: drawBorder 1.5s forwards;
-}
-.check {
-  fill: none;
-  stroke: #4da3ff;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-dasharray: 60;
-  stroke-dashoffset: 60;
-  filter: drop-shadow(0 0 8px #4da3ff);
-  animation: drawCheck 1s forwards;
-  animation-delay: 1.5s;
-}
-
-@keyframes drawBorder {
-  0% { stroke-dashoffset: 320; opacity:1; }
-  80% { stroke-dashoffset:0; opacity:1; }
-  100% { stroke-dashoffset:0; opacity:0.4; }
-}
-
-@keyframes drawCheck {
-  0% { stroke-dashoffset:60; opacity:0; }
-  50% { opacity:1; }
-  100% { stroke-dashoffset:0; opacity:1; }
-}
-
-/* Texto y subtítulos */
-.ia-security h2 {
-  font-size: 40px;
-  font-weight: 700;
-}
-.subtitle {
-  margin-top:10px;
-  opacity:0.7;
-  font-size:18px;
-}
-
-/* Contenedor principal */
-.content-box {
-  margin: 80px auto 0;
-  width: 90%;
-  max-width: 1100px;
-  padding:50px;
-  border-radius:20px;
-  background: linear-gradient(180deg, rgba(130,60,255,0.2), rgba(20,20,30,0.5));
-  border:1px solid rgba(255,255,255,0.1);
-  display:flex;
-  gap:50px;
-  justify-content:space-between;
-}
-.text {
-  width:45%;
-  text-align:left;
-}
-.text h3 {
-  font-size:28px;
-  margin-bottom:10px;
-}
-.link {
-  margin-top:20px;
-  display:inline-block;
-  color:#4da3ff;
-}
-.chat-box {
-  width:55%;
-  border-radius:20px;
-  overflow:hidden;
-}
-.chat-box img {
-  width:100%;
-  display:block;
-  border-radius:20px;
-  border: 2px solid rgba(255, 255, 255, 0.5); /* Contorno blanco 50% */
-  box-sizing: border-box;
-}
-</style>
-
-
- 
-<!-- ================= ESTILOS ================= -->
-<style>
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .animate-scroll {
-    display: flex;
-    animation: scroll 30s linear infinite;
-  }
-
-  /* Pausar animación al hacer hover */
-  #carousel:hover {
-    animation-play-state: paused;
-  }
-</style>
-
-  <style>
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-scroll {
-      animation: scroll 25s linear infinite;
-    }
-  </style>
-</section>
-
-        
-        
-        <pre
-          class="text-lime-400 font-mono text-sm overflow-x-auto whitespace-pre"
-        ><code>
-
-        </code></pre>
-      </div>
-    </section>
-
-    <!-- Contenedor del carrusel -->
-
-  <style>
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-scroll {
-      animation: scroll 25s linear infinite;
-    }
-  </style>
-
-
-    <!-- ================= AI AGENTS SECTION ================= -->
-   
-
-    <!-- ================= CTA SECTION ================= -->
-    <section
-      class="py-28 px-6 text-center bg-gradient-to-t from-orange-500/10 via-black to-black"
-    >
-      <h2 class="text-5xl font-extrabold mb-8">
-        TRGLIX INC <span class="text-orange-400">Desde el 2020</span>
-      </h2>
-      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
-        Con Expericiencia desde el 2020.
-      </p>
-      <button
-        class="bg-orange-500 hover:bg-orange-400 text-black font-bold text-lg px-10 py-4 rounded-full transition transform hover:scale-105 shadow-lg"
-      >
-        Más Información
-      </button>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-    <footer
-      class="border-t border-neutral-800 py-10 px-6 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm bg-black"
-    >
-      <p>&copy; TRGLIX INC. All rights reserved.</p>
-      <div class="flex gap-6 mt-4 md:mt-0">
-        <a href="#" class="hover:text-white">Privacy</a>
-        <a href="#" class="hover:text-white">Terms</a>
-        <a href="#" class="hover:text-white">Status</a>
-      </div>
-    </footer>
-  </body>
+        setInterval(() => {
+            const d = new Date();
+            document.getElementById('clock').innerText = d.getHours().toString().padStart(2,'0') + ":" + d.getMinutes().toString().padStart(2,'0');
+        }, 1000);
+    </script>
+</body>
 </html>
-
